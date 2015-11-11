@@ -25,12 +25,15 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block;
 }
-
+a{
+  text-decoration: none;
+  color: inherit;
+}
 body {
   line-height: 1;
-  font-family: 'Open Sans', sans-serif;
   letter-spacing: -0.04em;
   background: #FFF;
+  font-family: Raleway;
 }
 
 ol, ul {
@@ -47,4 +50,46 @@ header {
   width: 100%;
   height: 74px;
   overflow: hidden;
+}
+header .logo {
+  float: left;
+}
+header .menu{
+  float: left;
+  display: flex;
+  align-items:center;
+  /*justify-content:space-around;
+  width:34%;*/
+  height:100%;
+  text-transform:uppercase;
+  letter-spacing:0.1px;
+}
+header .menu a {
+  color: #666;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 18px;
+  margin-left: 35px;
+}
+header .menu a:hover {
+  color: #e35e02;
+}
+header .buttons {
+  float: right;
+  display: flex;
+  align-items:center;
+  height: 100%;
+}
+header .buttons .login{
+  width: 212px;
+  height: 41px;
+  background-color: #ffc712;
+  border-radius: 3px;
+  margin-right: 15px;
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 42px;
+  display: block;
+  text-align: center;
 }
