@@ -1,2 +1,2 @@
 # gsearu.ru
-http://gsear.ru/
+http://gsearu.ru/
