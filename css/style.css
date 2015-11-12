@@ -113,13 +113,15 @@ header .buttons .search img{
   
 }
 .top_slider {
-  width: 100%;
-  height: 846px;
+  width: 1920px;
+  height: 747px;
+  background-color: #1e2128;
 
 }
 .top_slider .slider1{
   background-image: url(../img/slider1.jpg);
   width: 100%;
   height: 612px;
-  background-size: contain;;
+  background-size: cover;;
+  opacity: 0.78;
 }
