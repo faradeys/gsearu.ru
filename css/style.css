@@ -31,11 +31,10 @@ a{
 }
 body {
   line-height: 1;
-  letter-spacing: -0.04em;
+  /* letter-spacing: -0.04em; */
   background: #FFF;
   font-family: Raleway;
 }
-
 ol, ul {
   list-style: none;
 }
@@ -156,6 +155,9 @@ header .buttons .search img{
   color: white;
   font-weight: 700;
   text-shadow: 0 2px 14px rgba(0, 0, 0, 0.1);
+  padding: 0;
+  margin: 0;
+  letter-spacing: -0.7px;
 }
 .top_slider .slider1 .content .title span{
   color: #ffc712;
@@ -620,8 +622,6 @@ header .buttons .search img{
   line-height: 42px;
   color: #444;
   font-weight: 300;
-  padding-top: 40px;
-  margin-bottom: 67px;
 }
  .title span{
   color: #ffc712;
@@ -683,8 +683,17 @@ header .buttons .search img{
   text-align: left;;
 
 }
+.next_events .title {
+  margin-bottom: 67px;
+  padding-top: 40px;
+}
 .partners {
   text-align: center;
+}
+.partners .title{
+  margin-bottom: 75px;
+  padding-top: 40px;
+  
 }
 .partners .part_carousel {
   display: flex;
@@ -722,7 +731,8 @@ header .buttons .search img{
   margin-top: -22px;
   background-color: #fff;
   display: inline-block;
-  margin-bottom: 0;;
+  margin-bottom: 0;
+  vertical-align: top;;
 }
 .social .line_title {
   margin-top: 111px;
