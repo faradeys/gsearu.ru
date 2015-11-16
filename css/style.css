@@ -48,11 +48,12 @@ input {
 }
 header {
   width: 100%;
-  height: 74px;
+  height: 94px;
   overflow: hidden;
 }
 header .logo {
   float: left;
+  margin: 6px 17.5px 0 20px;
 }
 header .menu{
   float: left;
@@ -64,12 +65,60 @@ header .menu{
   text-transform:uppercase;
   letter-spacing:0.1px;
 }
+header .menu ul {
+  display: flex;
+  align-items:center;
+  /*justify-content:space-around;
+  width:34%;*/
+  height:100%;
+  text-transform:uppercase;
+  letter-spacing:0.1px;
+}
+
+header .menu .have_subs .subs {
+  display: none;
+  position: absolute;
+  margin-left: 17.5px;
+}
+header .menu .have_subs:hover > .subs {
+  display: block;
+}
+header .menu .have_subs ul {
+  height: auto;
+  flex-direction: column;
+  opacity: 0.99;;
+  align-items: stretch;
+  justify-content: flex-start;
+  padding-bottom: 12px;
+  margin-top: 20px;
+  background-color: #525252;
+  
+}
+header .menu .have_subs ul li{
+  
+}
+
+header .menu .have_subs ul li a{
+  text-align: left;
+  color: #aaa;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  text-transform: none;
+  display: block;
+  margin: 12px 21px 0;
+
+}
+header .menu .have_subs ul li a:hover{
+  color: white;
+  text-decoration: underline;
+}
 header .menu a {
   color: #666;
   font-size: 12px;
   font-weight: 600;
   line-height: 18px;
-  margin-left: 35px;
+  margin: 0 17.5px 0 17.5px;;
 }
 header .menu a:hover {
   color: #e35e02;
@@ -112,20 +161,20 @@ header .buttons .search img{
   
 }
 .top_slider {
-  height: 747px;
+  height: 690px;
   width: 100%;
   
 
 }
 .top_slider .slider1{
   width: 100%;
-  height: 747px;
+  height: 690px;
   background-image: url(../img/slider1.jpg);
   background-position: center;
   background-size: cover;
 }
 .top_slider .slider1 .content{
-  width: 1138px;
+  width: 1137px;
   margin: 0 auto;
 
 }
@@ -133,9 +182,8 @@ header .buttons .search img{
   margin-top: 81px;
 }
 .top_slider .slider1 .content .podlogo{
-  width: 962px;
   overflow: hidden;
-  margin-top: 8px;
+  padding-top: 78px;;;
 }
 .top_slider .slider1 .content .podlogo .block{
   width: 246px;
@@ -148,16 +196,16 @@ header .buttons .search img{
   line-height: 20px;
   text-align: center;
   float: right;
+  margin-right: 13px;
 }
 .top_slider .slider1 .content .title{
-  font-size: 50px;
-  line-height: 59px;
-  color: white;
-  font-weight: 700;
   text-shadow: 0 2px 14px rgba(0, 0, 0, 0.1);
-  padding: 0;
-  margin: 0;
-  letter-spacing: -0.7px;
+  color: white;
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 45px;
+  letter-spacing: -0.53px;
+  margin-top: 7px;
 }
 .top_slider .slider1 .content .title span{
   color: #ffc712;
@@ -182,7 +230,7 @@ header .buttons .search img{
   line-height: 44px;
   display: block;
   text-align: center;
-  margin-top: 26px;;;
+  margin-top: 30px;;;
 }
 .top_slider .slider1 .content .watch_btn:hover{
   background-color: #e35e02;
@@ -193,16 +241,17 @@ header .buttons .search img{
 
 }
 .top_slider .slider1 .content .slider_crp {
-  margin-top: 68px;
+  margin-top: 47px;
 
 }
 .top_slider .oval {
-  margin: 11px auto 0;
-  text-align: center;
+  text-align: right;
+  margin: 0px auto 0;
+  width: 1064px;
 
 }
 .top_slider .oval .oval_s{
-  width: 7px; height: 7px;
+  width: 8px; height: 8px;
   background-color: white;
   border-radius: 10px;
   display: inline-block;
@@ -529,6 +578,7 @@ header .buttons .search img{
   font-weight: 300;
   margin-bottom: 51px;
   padding-top: 0;
+  letter-spacing: -0.09px;
 }
 .partic .title span{
   color: #ffc712;
@@ -550,6 +600,8 @@ header .buttons .search img{
   line-height: 25px;
   margin: 30px 27px 0 27px;
   height: 20%;
+  padding-top: 0;
+  letter-spacing: -0.09px;
 }
 .partic .item .text {
   color: #666;
@@ -583,7 +635,7 @@ header .buttons .search img{
   background-color: #ffc712;
   position: absolute;
   right: 0;
-  margin-top: -146px;
+  margin-top: -171px;
 }
 .block_for_slider2{
   width: 106px;
@@ -592,7 +644,7 @@ header .buttons .search img{
   background-color: #ffc712;
   position: absolute;
   right: 0;
-  margin-top: -26px;
+  margin-top: -51px;
 }
 .block_for_slider3 {
   width: 77px;
@@ -622,6 +674,7 @@ header .buttons .search img{
   line-height: 42px;
   color: #444;
   font-weight: 300;
+  letter-spacing: -0.9px;
 }
  .title span{
   color: #ffc712;
@@ -829,4 +882,69 @@ padding-top: 28px;
   font-weight: 600;
   color: white;
   font-weight: 700;
+}
+.top_slider .slider_footer {
+  width: 100%;
+  height: 105px;
+  opacity: 0.5;
+  background-color: black;
+  margin-top: 6px;
+}
+.top_slider .slider_footer .text {
+
+}
+.top_slider .slider_footer .text span {
+
+}
+.top_slider .slider_footer a{
+
+}
+.about {
+  height: 610px;
+  background-color: #f4f4f4;
+}
+.about .title {
+  padding-top: 40px;
+
+}
+.about .item {
+  width: 263px;
+  height: 440px;
+
+}
+.about .item img{
+  width: 90px;
+  height: 90px;
+  margin: 0 auto;;
+}
+
+.about .item .text {
+  margin-top: 28px;
+  height: 33%;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  margin-bottom: 17px;;
+
+}
+.about .item .title {
+  height: 15%;
+  margin: 30px 0 0 0;
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 25px;
+
+}
+.about .item .text ul{
+  text-align: left;
+  list-style-image: url(../img/oval_ul.png);
+
+}
+.about .item .text ul li{
+  margin-bottom: 10px;
+  padding-left: 7px;;
+
+}
+.partners .part_carousel .part:hover {
+  opacity: 0.5;
 }
