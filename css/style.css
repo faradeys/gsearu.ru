@@ -123,6 +123,9 @@ header .menu a {
 header .menu a:hover {
   color: #e35e02;
 }
+header .menu .active a{
+  color: #e35e02;
+}
 header .buttons {
   float: right;
   display: flex;
@@ -886,17 +889,42 @@ padding-top: 28px;
 .top_slider .slider_footer {
   width: 100%;
   height: 105px;
-  opacity: 0.5;
-  background-color: black;
+  background-color: rgba(0,0,0,0.5);
   margin-top: 6px;
+  text-align: center;
+  display: flex;
+  align-items: center;;
 }
 .top_slider .slider_footer .text {
+  height: 52px;
+  line-height: 26px;
+  text-align: left;
+  display: inline-block;
+  color: white;
+  width: 746px;
+  margin-right: 133px;;
 
+}
+.top_slider .slider_footer .block {
+  width: 1137px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;;
 }
 .top_slider .slider_footer .text span {
-
+  color: #ffc712;
+  font-size: 22px;
+  font-weight: 700;
 }
 .top_slider .slider_footer a{
+  width: 183px;
+  height: 44px;
+  border: 1px solid white;
+  border-radius: 3px;
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 45px;
 
 }
 .about {
