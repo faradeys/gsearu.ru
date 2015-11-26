@@ -59,7 +59,7 @@
 	<div class="right_block">
 		<div class="stage_block">
 			<div class="title_pr_a">ТЕКУЩИЙ ЭТАП</div>
-			<div class="stage">Завершающая стадия</div>
+			<div class="stage">[[*project_stage]]</div>
 		</div>
 		<div class="innovator">
 			<div class="title_pr_a">ИННОВАТОР</div>
@@ -68,14 +68,8 @@
 		</div>
 		<div class="partners">
 			<div class="title_pr_a">ОРГАНИЗАЦИИ И ПАРТНЕРЫ</div>
-			<div class="block">
-				<div class="org">CallBackHunter.com</div>
-				<div class="post_title">ОРГАНИЗАЦИЯ</div>
-			</div>
-			<div class="block">
-				<div class="org">CallBackHunter</div>
-				<div class="post_title">ПАРТНЕР</div>
-			</div>
+			[[tv_output? &type=`ОРГАНИЗАЦИЯ` &input=`[[*project_org]]`]]
+			[[tv_output? &type=`ПАРТНЕР` &input=`[[*project_partners]]`]]
 		</div>
 		<div class="place">
 			<div class="title_pr_a">МЕСТОПОЛОЖЕНИЕ</div>
@@ -83,15 +77,11 @@
 		</div>
 		<div class="teg">
 			<div class="title_pr_a">ТЕГИ</div>
-			<a href="#" class="fav">Воздух</a>
-			<a href="#" class="fav">Математика</a>
-			<a href="#" class="fav">Технологии</a>
-			<a href="#" class="fav">Ископаемые</a>
-			<a href="#" class="fav">Субъект</a>
+			[[!project_tags? &input=`[[*project_tags]]`]]
 		</div>
 		<div class="links">
 			<div class="title_pr_a">ССЫЛКИ НА ДРУГИЕ РЕСУРСЫ</div>
-			<a href="callbackhunter.com">callbackhunter.com</a>
+			[[tv_output? &type=`url` &input=`[[*project_friendsurl]]`]]
 		</div>
 	</div>
 	

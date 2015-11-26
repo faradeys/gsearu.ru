@@ -660,7 +660,6 @@ header .buttons .search img{
   color: #444;
   font-weight: 300;
   letter-spacing: -0.9px;
-  text-align: center;
 }
  .title span{
   color: #ffc712;
@@ -2212,6 +2211,7 @@ margin-top: 5px;
 }
 .news_cat .title {
   margin-top: 32px;
+  text-align: center;
 
 }
 .news_cat .content .pr_groups {
