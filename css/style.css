@@ -1753,8 +1753,9 @@ margin-top: 5px;
 .project_content .problem .problem_block {
   background-color: #f4f4f4;
   border-radius: 4px;
-  padding: 25px 0px 17px 32px;
-  width: 97%;
+  padding: 25px 25px 17px 32px;
+  width: 92%;
+  text-align: justify;
 
 }
 .project_content .problem .problem_block ul {
