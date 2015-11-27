@@ -870,17 +870,30 @@ text-align: left;
   font-weight: 600;
   color: white;
   font-weight: 600;
-  display: flex;
-  align-items: center;
-  text-transform: uppercase;
+  text-transform: uppercase;;
+}
+.footer .text .text_block {
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 7px;
+  
+}
+.footer .text span {
+  display: block;
+  
 }
 .footer .text a {
   font-weight: 900;
   margin-left: 3px;
+  display: block;
+  font-size: 22px;
+  margin-top: 8px;
 
 }
 .footer .text img {
   margin-left: 12px;
+  display: inline-block;
+  vertical-align: top;
 
 }
 .top_slider .slider_footer {
