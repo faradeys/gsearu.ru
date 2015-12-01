@@ -416,12 +416,25 @@ header .buttons .search img{
   width: 100%;
   height: auto;
   margin-top: 48px;
-  overflow: hidden;;
+  overflow: hidden;
 
 }
+.content .projects .proj {
+  width: 262px;
+  height: 402px;
+  background-color: #f4f4f4;
+  display: inline-block;
+  margin: 0 9px 40px;
+  overflow: hidden;
+}
+.content .projects .proj:hover {
+  background-color: #e35e02;
+}
+
 .content .projects .pr{
   background-repeat: no-repeat;
-  flex-shrink: 0;
+  display: block;
+  margin: 5px;
 
 }
 .content .projects .proj_podblock .pr {
@@ -429,9 +442,9 @@ header .buttons .search img{
 
 }
 .content .projects .pr1{
-  height: 402px;
+  height: 392px;
   background-size: cover;
-  flex-basis: 262px;
+  width: 252px;
 }
 .content .projects .pr2{
   height: 402px;
@@ -445,7 +458,95 @@ header .buttons .search img{
   width: 458px;
   height: 186px;
 }
+.content .projects .proj .mask {
+  position: absolute;
+  width: 252px;
+  height: 241px;
+  background-image: linear-gradient(180deg, transparent 0%, black 100%);
+  margin: -246px 0px 0px 5px;
+  z-index: 1;
+  
+}
+.content .projects .pr .user {
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 270px;
+  margin-left: 10px;
+  width: 62%;;
 
+}
+.content .projects .pr .user .img {
+  width: 30px;
+  height: 30px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+
+}
+.content .projects .pr .user .name {
+  display: inline-block;
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 18px;
+  vertical-align: top;
+  margin-top: 7px;
+  margin-left: 8px;
+
+}
+.content .projects .pr .rayting {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  width: 66px;
+  height: 66px;
+  border-radius: 100px;
+  border: 3px solid rgba(255,255,255,0.3);
+  vertical-align: top;
+  margin-top: 245px;;
+  color: white;
+  font-weight: 700;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.content .projects .pr .rayting .num {
+  font-family: Arial;
+  font-size: 16px;
+  line-height: 22px;
+}
+.content .projects .pr .rayting .text {
+  font-size: 9px;
+  line-height: 18px;
+}
+.content .projects .pr .rayting .canvas_rt {
+  position: absolute;
+  margin-top: -60px;
+  right: -12px;
+
+}
+.content .projects .pr .title_p {
+    color: white;
+    z-index: 2;
+    width: 90%;
+    font-weight: 700;
+    font-size: 16px;
+    position: relative;
+    overflow: hidden;
+    padding: 4px 0;
+    border-left: 5px solid #ffc712;
+    margin: 13px auto 0;
+}
+.content .projects .pr .title_p span {
+    background-color: #ffc712;
+    padding: 6px 5px 6px 0;
+    white-space: pre-wrap;
+    background-origin: padding-box;
+    display: inline;
+    line-height: 22px;
+}
 .content .projects .proj_block1 {
   display: flex;
   justify-content: space-between;
@@ -473,7 +574,7 @@ header .buttons .search img{
   justify-content: flex-start;
 }
 .content .add_pr {
-  margin: 30px auto 0;
+  margin: 10px auto 0;
 }
 .content .add_pr a{
   width: 249px;
@@ -1705,6 +1806,12 @@ text-align: left;
   font-size: 32px;
   font-weight: 700;
   line-height: 42px;
+
+}
+.project .header_second .raiting_block .canvas_rt {
+  position: absolute;
+  margin-top: -152px;
+  right: 1px;
 
 }
 .project .header_second .raiting_block .text {

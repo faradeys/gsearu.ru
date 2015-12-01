@@ -30,11 +30,56 @@
 	<div class="content">
 		<div class="raiting_block">
 			<div class="oval">
-				<div class="num">67</div>
+				<div class="num">[[*project_rating]]</div>
 				<div class="text">РЕЙТИНГ</div>
 			</div>
+			<canvas id="canvas" data-rating="[[*project_rating]]" class="canvas_rt" width="85" height="85">Your browser does not support the HTML5 canvas tag.</canvas>
 			<div class="votes">Проголосовало: <span><b>657</b> человек</span></div>
 		</div>
 	</div>
 </div>
 <div class="block_for_slider"></div><div class="block_for_slider2"></div>
+<script type="text/javascript">
+window.onload = function() {
+      var canvas = document.getElementById('canvas');
+      var context = canvas.getContext('2d');
+      var rating = canvas.getAttribute("data-rating");
+      var rating_cof = eval((rating / 100)*275);
+      canvas.style.width=180;
+      canvas.style.height=180;
+      canvas.width=180;
+      canvas.height=180;
+      var x = canvas.width /2;
+      var y = canvas.height / 2;
+       
+      var counterClockwise = false;
+      var run_black = function() {
+        var radius = 60;
+        var time = (new Date().getTime()- startTime)/ duration;
+        var startAngle = getRadians(-90);
+        var endAngle = getRadians(rating_cof);
+        /*var x_n = endAngle.width;
+      	var y_n = endAngle.height;
+      	console.log(x_n,y_n);*/
+        context.lineWidth = 4;
+        context.strokeStyle = "rgb(255,199,18)";
+        if(time < 1) {requestAnimationFrame(run_black);
+          endAngle = startAngle +(endAngle - startAngle)* time;
+        }
+        else {
+          duration = 1000,
+          startTime = new Date().getTime();
+        };
+        context.clearRect(0, 0, 600, 300);
+        context.beginPath();
+		    context.arc(x, y, radius, startAngle, endAngle, counterClockwise);
+        context.stroke();
+      };
+      var duration = 1500,
+      startTime = new Date().getTime();
+      run_black();
+	 function getRadians(degrees) {
+        return degrees * (Math.PI / 180);
+    }
+}
+</script>
