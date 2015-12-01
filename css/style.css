@@ -2260,6 +2260,9 @@ margin-top: 5px;
   letter-spacing: -0.6px;
   margin-top: 62px;
 }
+.header_minor .title_projects{
+  margin-top: 42px;
+}
 .header_minor .btn {
   background-color: #ffc712;
   border-radius: 3px;
