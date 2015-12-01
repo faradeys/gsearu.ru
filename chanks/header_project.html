@@ -33,7 +33,8 @@
 				<div class="num">[[*project_rating]]</div>
 				<div class="text">РЕЙТИНГ</div>
 			</div>
-			<canvas id="canvas" data-rating="[[*project_rating]]" class="canvas_rt" width="85" height="85">Your browser does not support the HTML5 canvas tag.</canvas>
+			<canvas id="canvas" data-rating="[[*project_rating]]" class="canvas_rt" width="180" height="180">Your browser does not support the HTML5 canvas tag.</canvas>
+			<div class="plus">+</div>
 			<div class="votes">Проголосовало: <span><b>657</b> человек</span></div>
 		</div>
 	</div>
@@ -44,13 +45,19 @@ window.onload = function() {
       var canvas = document.getElementById('canvas');
       var context = canvas.getContext('2d');
       var rating = canvas.getAttribute("data-rating");
-      var rating_cof = eval((rating / 100)*275);
+      var rating_cof = 360*rating / 100 - 90;
       canvas.style.width=180;
       canvas.style.height=180;
       canvas.width=180;
       canvas.height=180;
-      var x = canvas.width /2;
+      var x = canvas.width / 2;
       var y = canvas.height / 2;
+      var rat_x = 60*Math.cos(getRadians(rating_cof)) + x;
+      var rat_y = 60*Math.sin(getRadians(rating_cof)) + y;
+      var plus = document.querySelector('.plus');
+      console.log(rat_x - x,rat_y - y, rating_cof);
+      plus.style.left = (rat_x - 12) + 'px';
+      plus.style.top = (rat_y -41) + 'px';
        
       var counterClockwise = false;
       var run_black = function() {
@@ -64,22 +71,25 @@ window.onload = function() {
         context.lineWidth = 4;
         context.strokeStyle = "rgb(255,199,18)";
         if(time < 1) {requestAnimationFrame(run_black);
-          endAngle = startAngle +(endAngle - startAngle)* time;
+          	endAngle = startAngle +(endAngle - startAngle)* time;
         }
         else {
-          duration = 1000,
-          startTime = new Date().getTime();
+        	document.querySelector('.plus').style.visibility='visible';
+          	duration = 1000,
+          	startTime = new Date().getTime();
         };
         context.clearRect(0, 0, 600, 300);
         context.beginPath();
-		    context.arc(x, y, radius, startAngle, endAngle, counterClockwise);
+		context.arc(x, y, radius, startAngle, endAngle, counterClockwise);
         context.stroke();
+
       };
       var duration = 1500,
       startTime = new Date().getTime();
       run_black();
-	 function getRadians(degrees) {
+	function getRadians(degrees) {
         return degrees * (Math.PI / 180);
     }
+
 }
 </script>
