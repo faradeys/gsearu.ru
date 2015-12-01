@@ -57,13 +57,14 @@ header .logo {
 }
 header .menu{
   float: left;
-  display: flex;
-  align-items:center;
+  display: flex;;
   /*justify-content:space-around;
   width:34%;*/
   height:100%;
   text-transform:uppercase;
   letter-spacing:0.1px;
+  width:45%;
+  justify-content:center;;;
 }
 header .menu ul {
   display: flex;
@@ -73,6 +74,9 @@ header .menu ul {
   height:100%;
   text-transform:uppercase;
   letter-spacing:0.1px;
+  width:100%;
+  justify-content:space-between;
+  margin-left:15px;;
 }
 
 header .menu .have_subs .subs {
@@ -118,8 +122,7 @@ header .menu a {
   color: #666;
   font-size: 12px;
   font-weight: 600;
-  line-height: 18px;
-  margin: 0 17.5px 0 17.5px;;
+  line-height: 18px;;
 }
 header .menu a:hover {
   color: #e35e02;
@@ -399,7 +402,7 @@ header .buttons .search img{
   background-image: url(../img/cat_safe_a.png);
 }
 
-.content .pr_groups .group .active{
+.content .pr_groups .active .img{
   background-color: #e35e02;
 }
 .content .pr_groups .group .img:hover {
@@ -522,9 +525,9 @@ header .buttons .search img{
   line-height: 18px;
 }
 .content .projects .pr .rayting .canvas_rt {
-  position: absolute;
-  margin-top: -60px;
   right: -12px;
+  margin-top: -60px;
+  position: absolute;
 
 }
 .content .projects .pr .title_p {
@@ -1811,8 +1814,8 @@ text-align: left;
 }
 .project .header_second .raiting_block .canvas_rt {
   position: absolute;
-  left: 0px;
-  top: -28px;
+  left: 1px;
+  top: -29px;
 
 }
 .project .header_second .raiting_block .plus {
@@ -2360,4 +2363,12 @@ margin-top: 5px;
 }
 .news_cat .last_news {
   margin-top: 4px;
+}
+.projs {
+  text-align: center;
+  overflow: hidden;
+}
+.projs .title {
+  margin-top: 30px;
+  
 }
