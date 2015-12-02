@@ -80,10 +80,10 @@ header .menu ul {
 }
 
 header .menu .have_subs .subs {
-  display: none;
   position: absolute;
-  margin-left: 17.5px;
   z-index: 4;
+  padding-left: 17.5px;
+  display: none;
 }
 header .menu .have_subs:hover > .subs {
   display: block;
@@ -1812,7 +1812,7 @@ text-align: left;
   line-height: 42px;
 
 }
-.project .header_second .raiting_block .canvas_rt {
+.project .header_second .raiting_block .canvas_rt2 {
   position: absolute;
   left: 1px;
   top: -29px;
@@ -1892,7 +1892,7 @@ margin-top: 5px;
 .project_content .problem .problem_block {
   background-color: #f4f4f4;
   border-radius: 4px;
-  padding: 25px 25px 17px 32px;
+  padding: 25px 25px 25px 32px;
   width: 92%;
   text-align: justify;
 

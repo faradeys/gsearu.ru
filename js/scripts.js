@@ -22,7 +22,10 @@ $(document).ready(function() {
 	            
 	          },
 	       success: function(data){ // событие после удачного обращения к серверу и получения ответа
-	       		$('.projects_getjs').html(data['acc']);
+	       		$('.projects_getjs').html('');
+				for(var i=1; i < data.length; i++) {
+					$('.projects_getjs').append(data[i]);
+				}
 	       		convas_get_all();
 	         },
 	       error: function (xhr, ajaxOptions, thrownError) { // в случае неудачного завершения запроса к серверу
