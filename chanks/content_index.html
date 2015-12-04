@@ -1,60 +1,25 @@
 <div class="content">
 	<div class="top_text"><span>GSEA</span> - представляем собой сообщество ученых, изобретателей, инженеров, художников, мыслителей, творящих, молодых мужчин и женщин по всему миру соединенных общей оптимистичной идеей, что наука и технологии могут привести к радикально позитивным вещах происходящим в мире.</div>
 	<div class="title_pr">Проекты <span>принимающие</span> участие</div>
-	<div class="pr_groups">
-		<a href="#" class="group">
-			<div class="img robo_a active"></div>
-			<div class="title">Робототехника</div>
-		</a>
-		<a href="#" class="group">
-			<div class="img it"></div>
-			<div class="title">ИТ и коммуникации</div>
-		</a>
-		<a href="#" class="group">
-			<div class="img energ"></div>
-			<div class="title">Энергия и ресурсы</div>
-		</a>
-		<a href="#" class="group">
-			<div class="img food"></div>
-			<div class="title">Еда и вода</div>
-		</a>
-		<a href="#" class="group">
-			<div class="img med"></div>
-			<div class="title">Медицина</div>
-		</a>
-		<a href="#" class="group">
-			<div class="img learn"></div>
-			<div class="title">Обучение</div>
-		</a>
-		<a href="#" class="group">
-			<div class="img pro"></div>
-			<div class="title">Производство</div>
-		</a>
-		<a href="#" class="group">
-			<div class="img safe"></div>
-			<div class="title">Безопасность</div>
-		</a>
+	[[$pr_groups]]
+	<div class="projects projects_getjs">
+		[[!getResources? &parents=`12` &tpl=`project_item` &limit=`8` &includeTVs=`1` &processTVs=`1`]]	
 	</div>
-	<div class="projects">
-		<div class="proj_block1">
-				<a style="background-image: url(assets/img/pr1.jpg);" href="#" class="pr pr1"></a>
-				<a style="background-image: url(assets/img/pr2.jpg);" href="#"  class="pr pr2"></a>
-			<div class="proj_podblock">
-				<a style="background-image: url(assets/img/pr3.jpg);" href="#"  class="pr pr3"></a>
-				<a style="background-image: url(assets/img/pr4.jpg);" href="#"  class="pr pr4"></a>
-			</div>
-			
-		</div>
-		<div class="proj_block1">
-			<div class="proj_podblock">
-				<a style="background-image: url(assets/img/pr5.jpg);" href="#"  class="pr pr3"></a>
-				<a style="background-image: url(assets/img/pr8.jpg);" href="#"  class="pr pr4"></a>
-			</div>
-				<a style="background-image: url(assets/img/pr6.jpg);" href="#"  class="pr pr1"></a>
-				<a style="background-image: url(assets/img/pr7.jpg);" href="#"  class="pr pr2"></a>
-		</div>
-		
-	</div>
+	<script type="text/javascript">
+		var ar = document.getElementsByClassName('canvas_rt');
+		for(var i in ar) {
+			console.log(ar[i]);
+			var rating = ar[i].getAttribute("data-rating");
+			var rating_cof = eval(((rating / 100)*2) - 0.5);
+			var c = ar[i];
+			var ctx = c.getContext("2d");
+			ctx.beginPath();
+			ctx.lineWidth = 3;
+			ctx.strokeStyle = "rgb(255,199,18)";
+			ctx.arc(40,40,35,-0.5*Math.PI,rating_cof*Math.PI);
+			ctx.stroke();
+		}
+	</script>
 	<div class="add_pr">
 		<a href="#">ДОБАВИТЬ СВОЙ ПРОЕКТ<div class="plus">+</div></a>
 	</div>
@@ -163,38 +128,5 @@
 		</a>
 	</div>
 </div>
-<div class="partners">
-	<div class="title">Партнеры</div>
-	<div class="part_carousel">
-		<a href="#" class="prev"></a>
-		<div class="part"><img src="assets/img/part1.png"></div>
-		<div class="part"><img src="assets/img/part2.png"></div>
-		<div class="part"><img src="assets/img/part3.png"></div>
-		<div class="part"><img src="assets/img/part4.png"></div>
-		<div class="part"><img src="assets/img/part5.png"></div>
-		<div class="part"><img src="assets/img/part6.png"></div>
-		<div class="part"><img src="assets/img/part7.png"></div>
-		<a href="#" class="next"></a>
-	</div>
-</div>
-<div class="social">
-	<div class="line_title">
-		<div class="title">Следите за обновлениями в социальных сетях</div>
-	</div>
-	<a href="#" class="item">
-		<img src="assets/img/twit.png">
-		<div class="text">Twitter</div>
-	</a>
-	<a href="#" class="item">
-		<img src="assets/img/vk.png">
-		<div class="text">Вконтакте</div>
-	</a>
-	<a href="#" class="item">
-		<img src="assets/img/ytub.png">
-		<div class="text">YouTube</div>
-	</a>
-	<a href="#" class="item">
-		<img src="assets/img/fbook.png">
-		<div class="text">Facebook</div>
-	</a>
-</div>
+[[$partners]]
+[[$social]]
