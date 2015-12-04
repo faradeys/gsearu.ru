@@ -8,10 +8,12 @@ $(document).ready(function() {
 			$(this).removeClass('active');
 		});
 		$(this).addClass('active');
-		var proj_group = $(this).children('.title').text();
+		var proj_group = $(this).children('.title').text(),
+		type_gr = $('#informa').data('grouptype');
 		//console.log(tv);
 		var data = {
-            "proj_group" : proj_group
+            "proj_group" : proj_group,
+            "type" : type_gr,
         	};
 		$.ajax({ 
 		   type: 'POST', 
@@ -22,11 +24,12 @@ $(document).ready(function() {
 	            
 	          },
 	       success: function(data){ // событие после удачного обращения к серверу и получения ответа
-	       		$('.projects_getjs').html('');
-				for(var i=1; i < data.length; i++) {
-					$('.projects_getjs').append(data[i]);
+	       		$('.getjs').html('');
+				$('.getjs').append(data['acc']);
+				if(type_gr=='proj'){
+					convas_get_all();
 				}
-	       		convas_get_all();
+	       		
 	         },
 	       error: function (xhr, ajaxOptions, thrownError) { // в случае неудачного завершения запроса к серверу
 	            alert(xhr.status); // покажем ответ сервера
@@ -43,18 +46,27 @@ $(document).ready(function() {
 	// функция отрисовки конвасов =)
 	function convas_get_all() {
 			var ar = document.getElementsByClassName('canvas_rt');
-			for(var i in ar) {
-				console.log(ar[i]);
-				var rating = ar[i].getAttribute("data-rating");
-				var rating_cof = eval(((rating / 100)*2) - 0.5);
-				var c = ar[i];
-				var ctx = c.getContext("2d");
-				ctx.beginPath();
-				ctx.lineWidth = 3;
-				ctx.strokeStyle = "rgb(255,199,18)";
-				ctx.arc(40,40,35,-0.5*Math.PI,rating_cof*Math.PI);
-				ctx.stroke();
+			if (ar.length){
+				for(var i in ar) {
+					console.log(ar[i]);
+					var rating = ar[i].getAttribute("data-rating");
+					var rating_cof = eval(((rating / 100)*2) - 0.5);
+					var c = ar[i];
+					var ctx = c.getContext("2d");
+					ctx.beginPath();
+					ctx.lineWidth = 3;
+					ctx.strokeStyle = "rgb(255,199,18)";
+					ctx.arc(40,40,35,-0.5*Math.PI,rating_cof*Math.PI);
+					ctx.stroke();
+				}
 			}
 		}
+
 		convas_get_all();
+
+
+	
+
+	
+
 });
