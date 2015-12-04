@@ -8,30 +8,35 @@
 <div class="content project_content">
 	<div class="left_block">
 		<div class="title_p">[[*pagetitle]]</div>
+		[[*introtext:!empty=`
 		<div class="description">
 			[[*introtext]]
-		</div>
+		</div>`]]
 		<div class="content_text">
 			[[*content]]
 		</div>
+		[[*project_problem:is=`<ul></ul>`:then=``:else=`
 		<div class="problem">
 			<div class="title_problem">Глобальная проблема, которую решает мой проект</div>
 			<div class="problem_block">
 				[[*project_problem]]
 			</div>
-		</div>
+		</div>`]]
+		[[*project_problem_solution:!empty=`
 		<div class="problem_solution">
 			<div class="title_problem">Радикальное решение проблемы</div>
 			<div class="content_text">
 				[[*project_problem_solution]]
 			</div>
-		</div>
+		</div>`]]
+		[[*project_use_tech:!empty=`
 		<div class="use_tech">
 			<div class="title_problem">Используемые технологии</div>
 			<div class="content_text">
 				[[*project_use_tech]]
 			</div>
-		</div>
+		</div>`]]
+		[[*project_help_project:!empty=`
 		<div class="problem">
 			<div class="title_p">Как вы можете помочь проекту?</div>
 			<div class="problem_block">
@@ -40,7 +45,7 @@
 				</div>
 				<a href="#">ПОМОЧЬ ПРОЕКТУ</a>
 			</div>
-		</div>
+		</div>`]]
 		<div class="helpers_block">
 			<div class="helpers">
 				<a href="#"><img src="assets/img/helper1.png"></a>
@@ -74,14 +79,16 @@
 			<div class="title_pr_a">МЕСТОПОЛОЖЕНИЕ</div>
 			<div class="map"><img src="assets/img/proj_map.jpg"></div>
 		</div>
+		[[*project_tags:!empty=`
 		<div class="teg">
 			<div class="title_pr_a">ТЕГИ</div>
 			[[!project_tags? &input=`[[*project_tags]]`]]
-		</div>
+		</div>`]]
+		[[*project_friendsurl:!empty=`
 		<div class="links">
 			<div class="title_pr_a">ССЫЛКИ НА ДРУГИЕ РЕСУРСЫ</div>
 			[[tv_output? &type=`url` &input=`[[*project_friendsurl]]`]]
-		</div>
+		</div>`]]
 	</div>
 	
 </div>
