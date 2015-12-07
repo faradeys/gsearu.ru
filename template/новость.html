@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+[[$head]]
+<body class="seconds news">
+[[$header]]
+[[$header_second]]
+<div class="content project_content news_content">
+	<div class="left_block">
+		<div class="description">
+			[[*description]]
+		</div>
+		<div class="content_text">
+			[[*content]]
+		</div>
+	</div>
+	<div class="right_block">
+		<div class="stage_block">
+			<div class="title_pr_a">ДРУГИЕ НОВОСТИ</div>
+			<div class="block_news">
+				[[!getResources? &parents=`20` &showHidden=`1` &tpl=`news_item_leftblock` &limit=`3` &includeTVs=`1` &processTVs=`1`]]
+			</div>
+		</div>
+	</div>
+</div>
+[[$next_events]]
+[[$partners]]
+[[$social]]
+[[$delivery]]
+[[$footer]]
+</body>
+</html>

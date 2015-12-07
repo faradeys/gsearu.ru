@@ -9,6 +9,15 @@ if(isset($_POST['proj_group'])){
 	elseif($type == 'news'){
 		$out = $modx->runSnippet('getResources', array('showHidden'=> '1','parents'=>'20','tpl'=>'news_item_in', 'limit' => '6','includeTVs' => '1', 'processTVs' => '1',  'sortdirTV' => 'DESC', 'tvFilters' => 'project_cat ==%'.$proj_group.'%'));
 	}
+	elseif($type == 'invest'){
+		if ($proj_group == 'Все'){
+			$out = $modx->runSnippet('getResources', array('showHidden'=> '1','parents'=>'25','tpl'=>'invest_tpl', 'limit' => '6','includeTVs' => '1', 'processTVs' => '1'));
+		}
+		else {
+			$out = $modx->runSnippet('getResources', array('showHidden'=> '1','parents'=>'25','tpl'=>'invest_tpl', 'limit' => '6','includeTVs' => '1', 'processTVs' => '1',  'sortdirTV' => 'DESC', 'tvFilters' => 'project_cat ==%'.$proj_group.'%'));
+		}
+		
+	}
 	$json['acc'] = $out;
 	/*$array = explode('<div class="proj">', $out);
 	foreach($array as $key => $value){

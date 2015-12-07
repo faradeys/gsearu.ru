@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	
+
 	//Вывод проектов по группам
 
 	$('.group').click(function(e){
@@ -15,13 +15,13 @@ $(document).ready(function() {
             "proj_group" : proj_group,
             "type" : type_gr,
         	};
-		$.ajax({ 
-		   type: 'POST', 
-		   url: 'scp.html', 
-		   dataType: 'json', 
-		   data: data, 
+		$.ajax({
+		   type: 'POST',
+		   url: 'scp.html',
+		   dataType: 'json',
+		   data: data,
 	       beforeSend: function(data) { // событие до отправки
-	            
+
 	          },
 	       success: function(data){ // событие после удачного обращения к серверу и получения ответа
 	       		$('.getjs').html('');
@@ -29,7 +29,7 @@ $(document).ready(function() {
 				if(type_gr=='proj'){
 					convas_get_all();
 				}
-	       		
+
 	         },
 	       error: function (xhr, ajaxOptions, thrownError) { // в случае неудачного завершения запроса к серверу
 	            alert(xhr.status); // покажем ответ сервера
@@ -37,7 +37,7 @@ $(document).ready(function() {
 	         },
 	       complete: function(data) { // событие после любого исхода
 
-	         }       
+	         }
 		});
 	});
 
@@ -65,8 +65,8 @@ $(document).ready(function() {
 		convas_get_all();
 
 
-	
 
-	
+
+
 
 });

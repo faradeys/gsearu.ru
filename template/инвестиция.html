@@ -61,6 +61,31 @@
 		</div>
 	</div>
 	<div class="right_block">
+		<div class="invest_block">
+			<div class="title_pr_a">ИНВЕСТИЦИИ</div>
+			<div class="persent">[[!invest_percent? &type=`percent`]]%</div>
+			<div class="block">
+				<div class="price">
+					<div class="price_now"> [[*invest_price_now]] </div>
+					<div class="price_need">из  [[*invest_priceneed]] </div>
+				</div>
+				<div class="time_left">ОСТАЛОСЬ [[!invest_percent? &type=`date`]]</div>
+				<a class="inv_btn" href="#">ИНВЕСТИРОВАТЬ</a>
+				<div class="inv_foot">12% Рыболовство входит холодный кедровый стланик Культурный</div>
+			</div>
+		</div>
+		<div class="dyn_block">
+			<div class="title_pr_a">ДИНАМИКА ИНВЕСТИРОВАНИЯ</div>
+			<div class="price">
+				<div class="price_now"> [[*invest_price_now]] </div>
+				<div class="price_need">из  [[*invest_priceneed]] </div>
+				<div class="persent">[[!invest_percent? &type=`percent`]]%<span>завершено</span></div>
+			</div>
+			<div class="line"></div>
+			<div style="width:[[!invest_percent? &type=`line`]]px;" class="line_o"></div>
+			<div style="margin-left:[[!invest_percent? &type=`line`]]px;" class="oval"></div>
+
+		</div>
 		<div class="stage_block">
 			<div class="title_pr_a">ТЕКУЩИЙ ЭТАП</div>
 			<div class="stage">[[*project_stage]]</div>
