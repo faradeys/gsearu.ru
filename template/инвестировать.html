@@ -4,153 +4,56 @@
 [[$head]]
 <body class="seconds project">
 [[$header]]
-[[$header_project]]
-<div class="content project_content">
-	<div class="left_block">
-		<div class="title_p">[[*pagetitle]]</div>
-		[[*introtext:!empty=`
-		<div class="description">
-			[[*introtext]]
-		</div>`]]
-		<div class="content_text">
-			[[*content]]
-		</div>
-		[[*project_problem:is=`<ul></ul>`:then=``:else=`
-		<div class="problem">
-			<div class="title_problem">Глобальная проблема, которую решает мой проект</div>
-			<div class="problem_block">
-				[[*project_problem]]
-			</div>
-		</div>`]]
-		[[*project_problem_solution:!empty=`
-		<div class="problem_solution">
-			<div class="title_problem">Радикальное решение проблемы</div>
-			<div class="content_text">
-				[[*project_problem_solution]]
-			</div>
-		</div>`]]
-		[[*project_use_tech:!empty=`
-		<div class="use_tech">
-			<div class="title_problem">Используемые технологии</div>
-			<div class="content_text">
-				[[*project_use_tech]]
-			</div>
-		</div>`]]
-		[[*project_help_project:!empty=`
-		<div class="problem">
-			<div class="title_p">Как вы можете помочь проекту?</div>
-			<div class="problem_block">
-				<div class="content_text">
-					[[*project_help_project]]
-				</div>
-				<a href="#">ПОМОЧЬ ПРОЕКТУ</a>
-			</div>
-		</div>`]]
-		<div class="helpers_block">
-			<div class="helpers">
-				<a href="#"><img src="assets/img/helper1.png"></a>
-				<a href="#"><img src="assets/img/helper2.png"></a>
-				<a href="#"><img src="assets/img/helper3.png"></a>
-				<a href="#"><img src="assets/img/helper4.png"></a>
-				<a href="#"><img src="assets/img/helper5.png"></a>
-			</div>
-			<div class="post_help">
-				<div class="col">342</div>
-				<div class="text">Человека уже помогли проекту</div>
-			</div>
-		</div>
-	</div>
-	<div class="right_block">
-		<div class="invest_block">
-			<div class="title_pr_a">ИНВЕСТИЦИИ</div>
-			<div class="persent">[[!invest_percent? &type=`percent`]]%</div>
-			<div class="block">
-				<div class="price">
-					<div class="price_now"> [[*invest_price_now]] </div>
-					<div class="price_need">из  [[*invest_priceneed]] </div>
-				</div>
-				<div class="time_left">ОСТАЛОСЬ [[!invest_percent? &type=`date`]]</div>
-				<a class="inv_btn" href="#">ИНВЕСТИРОВАТЬ</a>
-				<div class="inv_foot">12% Рыболовство входит холодный кедровый стланик Культурный</div>
-			</div>
-		</div>
-		<div class="dyn_block">
-			<div class="title_pr_a">ДИНАМИКА ИНВЕСТИРОВАНИЯ</div>
-			<div class="price">
-				<div class="price_now"> [[*invest_price_now]] </div>
-				<div class="price_need">из  [[*invest_priceneed]] </div>
-				<div class="persent">[[!invest_percent? &type=`percent`]]%<span>завершено</span></div>
-			</div>
-			<div class="line"></div>
-			<div style="width:[[!invest_percent? &type=`line`]]px;" class="line_o"></div>
-			<div style="margin-left:[[!invest_percent? &type=`line`]]px;" class="oval"></div>
-
-		</div>
-		<div class="stage_block">
-			<div class="title_pr_a">ТЕКУЩИЙ ЭТАП</div>
-			<div class="stage">[[*project_stage]]</div>
-		</div>
-		<div class="innovator">
-			<div class="title_pr_a">ИННОВАТОР</div>
-			<a style="background-image:url(assets/img/profile_img.png)" href="#"></a>
-			<div class="name">Руслан Татунашвили</div>
-		</div>
-		<div class="partners">
-			<div class="title_pr_a">ОРГАНИЗАЦИИ И ПАРТНЕРЫ</div>
-			[[tv_output? &type=`ОРГАНИЗАЦИЯ` &input=`[[*project_org]]`]]
-			[[tv_output? &type=`ПАРТНЕР` &input=`[[*project_partners]]`]]
-		</div>
-		<div class="place">
-			<div class="title_pr_a">МЕСТОПОЛОЖЕНИЕ</div>
-			<div class="map"><img src="assets/img/proj_map.jpg"></div>
-		</div>
-		[[*project_tags:!empty=`
-		<div class="teg">
-			<div class="title_pr_a">ТЕГИ</div>
-			[[!project_tags? &input=`[[*project_tags]]`]]
-		</div>`]]
-		[[*project_friendsurl:!empty=`
-		<div class="links">
-			<div class="title_pr_a">ССЫЛКИ НА ДРУГИЕ РЕСУРСЫ</div>
-			[[tv_output? &type=`url` &input=`[[*project_friendsurl]]`]]
-		</div>`]]
-	</div>
-
-</div>
-<div class="video_block">
-	<div class="content">
-		<div class="title_v">Медиа ресурсы проекта</div>
-		<a class="sl_next" href="#"><img src="assets/img/slider_next.png"></a>
-		<a class="sl_pre" href="#"><img src="assets/img/slider_pre.png"></a>
-		<div class="video_carousel">
-			<a class="item" href="#">
-				<img src="assets/img/video_block1.jpg">
-				<div class="mask_bg"></div>
-			</a>
-			<a class="item" href="#">
-				<img src="assets/img/video_block1.jpg">
-				<div class="mask_bg"></div>
-				<div class="mask_video"><img src="assets/img/video_btn.png"></div>
-			</a>
-			<a class="item active" href="#">
-				<iframe width="166" height="166" src="https://www.youtube.com/embed/GEb_s_MV60E" frameborder="0" allowfullscreen></iframe>
-				<div class="mask_bg"></div>
-				<div class="mask_video"><img src="assets/img/video_btn.png"></div>
-			</a>
-			<a class="item active" href="#">
-				<img src="assets/img/video_block1.jpg">
-				<div class="mask_bg"></div>
-			</a>
-			<a class="item" href="#">
-				<img src="assets/img/video_block1.jpg">
-				<div class="mask_bg"></div>
-			</a>
-			<a class="item" href="#">
-				<img src="assets/img/video_block1.jpg">
-				<div class="mask_bg"></div>
-			</a>
-		</div>
-	</div>
+[[$header_do_invest]]
+<div class="content project_content doinvest_content">
+  <div class="title">
+    Инвестировать
+  </div>
+  <div class="form">
+    <div class="inp_block">
+      <div class="text">
+        ВВЕДИТЕ ВАШЕ ПОЛНОЕ ИМЯ
+      </div>
+      <input type="text" placeholder="Введите Ваше имя" name="name" value="">
+    </div>
+    <div class="inp_block">
+      <div class="pod_block">
+        <div class="text text_half">
+          ТЕЛЕФОН
+        </div>
+        <input class="inp_half"  placeholder="Введите Ваш телефон" type="text" name="tel" value="">
+      </div>
+      <div class="pod_block">
+        <div class="text text_half">
+          E-MAIL
+        </div>
+        <input type="text" placeholder="Введите Ваш email" class="inp_half" name="mail" value="">
+      </div>
+    </div>
+    <div class="inp_block">
+      <div class="text">
+        СУММА ИНВЕСТИЦИЙ
+      </div>
+      <input type="text"placeholder="Введите желаемую сумму инвестиций..." name="sum" value="">
+    </div>
+    <div class="price_block">
+      <div class="price_now">
+        [[get_tv? &type=`tv` &do=`invest_price_now`]]
+      </div>
+      <div class=price_need>
+        из [[get_tv? &type=`tv` &do=`invest_priceneed`]]
+      </div>
+      <div class="percent">
+        [[!invest_percent? &type=`percent2` &id=`[[!echo_get? &type=`id`]]`]]%<span>завершено</span>
+      </div>
+      <div class="line"></div>
+      <div style="width:[[!invest_percent? &type=`percent3` &id=`[[!echo_get? &type=`id`]]`]]%;" class="line_in"></div>
+      <div style="margin-left:[[!invest_percent? &type=`percent3` &id=`[[!echo_get? &type=`id`]]`]]%;" class="oval"></div>
+    </div>
+    <div class="btn_block">
+      <a class="btn btn_invest" href="#">ИНВЕСТИРОВАТЬ</a>
+    </div>
+  </div>
 </div>
 [[$delivery]]
 [[$footer]]

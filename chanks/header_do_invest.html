@@ -1,0 +1,95 @@
+<div style="background-image: url([[get_tv? &type=`tv` &do=`header_second_bg`]]);" class="header_second">
+	<div class="mask"></div>
+	<div class="bot_shadow"></div>
+	<div class="title">[[get_tv? &type=`all` &do=`pagetitle`]]</div>
+	<div class="cat">
+		<div class="text">Категория: [[get_tv? &type=`tv` &do=`project_cat`]]</div>
+	</div>
+	<div class="socials">
+		<div class="item">
+			<img src="assets/img/proj_vk.png">
+			<div class="col">265</div>
+		</div>
+		<div class="item">
+			<img src="assets/img/proj_fb.png">
+			<div class="col">365</div>
+		</div>
+		<div class="item">
+			<img src="assets/img/proj_yb.png">
+			<div class="col">25</div>
+		</div>
+		<div class="item">
+			<img src="assets/img/proj_tw.png">
+			<div class="col">11</div>
+		</div>
+	</div>
+	<a class="watch" href="#">
+		<img src="assets/img/watch_video.png">
+		СМОТРЕТЬ ВИДЕО
+	</a>
+	<div class="content">
+		<div class="raiting_block">
+			<div class="oval">
+				<div class="num">[[get_tv? &type=`tv` &do=`project_rating`]]</div>
+				<div class="text">РЕЙТИНГ</div>
+			</div>
+			<canvas id="canvas" data-rating="[[get_tv? &type=`tv` &do=`project_rating`]]" class="canvas_rt2" width="180" height="180">Your browser does not support the HTML5 canvas tag.</canvas>
+			<div class="plus">+</div>
+			<div class="votes">Проголосовало: <span><b>657</b> человек</span></div>
+		</div>
+	</div>
+</div>
+<div class="block_for_slider"></div><div class="block_for_slider2"></div>
+<script type="text/javascript">
+window.onload = function() {
+      var canvas = document.getElementById('canvas');
+      var context = canvas.getContext('2d');
+      var rating = canvas.getAttribute("data-rating");
+      var rating_cof = 360*rating / 100 - 90;
+      canvas.style.width=180;
+      canvas.style.height=180;
+      canvas.width=180;
+      canvas.height=180;
+      var x = canvas.width / 2;
+      var y = canvas.height / 2;
+      var rat_x = 59.5*Math.cos(getRadians(rating_cof)) + x;
+      var rat_y = 59.5*Math.sin(getRadians(rating_cof)) + y;
+      var plus = document.querySelector('.plus');
+      console.log(rat_x - x,rat_y - y, rating_cof);
+      plus.style.left = (rat_x - 12) + 'px';
+      plus.style.top = (rat_y -41) + 'px';
+
+      var counterClockwise = false;
+      var run_black = function() {
+        var radius = 59.5;
+        var time = (new Date().getTime()- startTime)/ duration;
+        var startAngle = getRadians(-90);
+        var endAngle = getRadians(rating_cof);
+        /*var x_n = endAngle.width;
+      	var y_n = endAngle.height;
+      	console.log(x_n,y_n);*/
+        context.lineWidth = 4;
+        context.strokeStyle = "rgb(255,199,18)";
+        if(time < 1) {requestAnimationFrame(run_black);
+          	endAngle = startAngle +(endAngle - startAngle)* time;
+        }
+        else {
+        	document.querySelector('.plus').style.visibility='visible';
+          	duration = 1000,
+          	startTime = new Date().getTime();
+        };
+        context.clearRect(0, 0, 600, 300);
+        context.beginPath();
+		context.arc(x, y, radius, startAngle, endAngle, counterClockwise);
+        context.stroke();
+
+      };
+      var duration = 1500,
+      startTime = new Date().getTime();
+      run_black();
+	function getRadians(degrees) {
+        return degrees * (Math.PI / 180);
+    }
+
+}
+</script>
