@@ -20,23 +20,20 @@ $(document).ready(function() {
 		   url: 'scp.html',
 		   dataType: 'json',
 		   data: data,
-	       beforeSend: function(data) { // событие до отправки
-
+	       beforeSend: function(data) {
 	          },
-	       success: function(data){ // событие после удачного обращения к серверу и получения ответа
+	       success: function(data){
 	       		$('.getjs').html('');
-				$('.getjs').append(data['acc']);
-				if(type_gr=='proj'){
-					convas_get_all();
-				}
-
+						$('.getjs').append(data['acc']);
+						if(type_gr=='proj'){
+							convas_get_all();
+						}
 	         },
-	       error: function (xhr, ajaxOptions, thrownError) { // в случае неудачного завершения запроса к серверу
-	            alert(xhr.status); // покажем ответ сервера
-	            alert(thrownError); // и текст ошибки
+	       error: function (xhr, ajaxOptions, thrownError) {
+	            alert(xhr.status);
+	            alert(thrownError);
 	         },
-	       complete: function(data) { // событие после любого исхода
-
+	       complete: function(data) {
 	         }
 		});
 	});
@@ -47,9 +44,9 @@ $(document).ready(function() {
 	function convas_get_all() {
 			var ar = document.getElementsByClassName('canvas_rt');
 			if (ar.length){
-				for(var i in ar) {
-					console.log(ar[i]);
+				for(var i=0;i<ar.length;i++) {
 					var rating = ar[i].getAttribute("data-rating");
+					console.log(rating);
 					var rating_cof = eval(((rating / 100)*2) - 0.5);
 					var c = ar[i];
 					var ctx = c.getContext("2d");
@@ -87,29 +84,77 @@ $('.btn_invest').click(function(e){
 		var data = {
             "isloggining" : 1,
         	};
-		$.ajax({
-		   type: 'POST',
-		   url: 'scp.html',
-		   dataType: 'json',
-		   data: data,
-	       beforeSend: function(data) { // событие до отправки
+			$.ajax({
+			   type: 'POST',
+			   url: 'scp.html',
+			   dataType: 'json',
+			   data: data,
+		       beforeSend: function(data) {
 
-	          },
-	       success: function(data){ // событие после удачного обращения к серверу и получения ответа
-					 console.log(data['out']);
-	         },
-	       error: function (xhr, ajaxOptions, thrownError) { // в случае неудачного завершения запроса к серверу
-	            alert(xhr.status); // покажем ответ сервера
-	            alert(thrownError); // и текст ошибки
-	         },
-	       complete: function(data) { // событие после любого исхода
+		          },
+		       success: function(data){
+						 if(data['out']== 'true'){
+							 var data = $('input').serialize();
+							 console.log(data);
+							 $.ajax({
+					 		   type: 'POST',
+					 		   url: 'scp.html',
+					 		   dataType: 'json',
+					 		   data: data,
+					 	       success: function(data){
 
-	         }
+					 	         },
+					 		});
+						 }
+						 else {
+							 	$('#facebook-authentifikation').css('display','block');
+						 		$('.scrolled-overlay').css({
+						 							'display': 'flex'
+						 		});
+						 }
+		         },
+		       error: function (xhr, ajaxOptions, thrownError) {
+		            alert(xhr.status);
+		            alert(thrownError);
+		         },
+		       complete: function(data) {
+		         }
+			});
+		}
+	});
+
+	//Всплывающее окно логина
+	$('.login').click(function (e) {
+		e.preventDefault();
+		$('#facebook-authentifikation').css('display','block');
+		$('.scrolled-overlay').css({
+							'display': 'flex'
 		});
-	}
+	});
+		$('.close-pop-up').click('click', function(){
+				$('#facebook-authentifikation').css({
+						'display': 'none',
+				});
+				$('body').css({
+						'overflow-y': 'visible'
+				});
+				$('.scrolled-overlay').css({
+						'display': 'none'
+				});
+		});
 });
+window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '192533221087127',
+      xfbml      : true,
+      version    : 'v2.5'
+    });
+  };
 
-
-
-
-});
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));

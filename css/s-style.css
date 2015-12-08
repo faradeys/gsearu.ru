@@ -27,3 +27,23 @@
     font-weight: 500;
 	margin-top:5px;
 }
+
+.general-parthner{
+	margin:30px auto -20px;
+	text-align:center;
+	
+}
+.general-parthner img{
+	width:300px;
+	display:inline-block;
+	margin-left:-250px;
+}
+.general-parthner p{
+	display:block;
+	float:left;
+	text-align:right;
+	color: #ffc712;
+    font-size: 22px;
+    font-weight: 700;
+	margin-top:20px;
+}
