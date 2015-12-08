@@ -64,7 +64,50 @@ $(document).ready(function() {
 
 		convas_get_all();
 
+//При нажатии на инвестировать проект
+$('.btn_invest').click(function(e){
+	e.preventDefault();
+	var err = 0;
+	var field = new Array("name", "tel","mail","sum");
+			$(".form").find(":input").each(function() {
+				for(var i=0;i<field.length;i++){
+					if($(this).attr("name")==field[i]){
+						if(!$(this).val()){
+							$(this).css('border', 'red 1px solid');
+							err = 1;
+						}
+						else{
+							$(this).css('border', 'gray 1px solid');
+							err = 0;
+						}
+					}
+				}
+			});
+	if(err == 0) {
+		var data = {
+            "isloggining" : 1,
+        	};
+		$.ajax({
+		   type: 'POST',
+		   url: 'scp.html',
+		   dataType: 'json',
+		   data: data,
+	       beforeSend: function(data) { // событие до отправки
 
+	          },
+	       success: function(data){ // событие после удачного обращения к серверу и получения ответа
+					 console.log(data['out']);
+	         },
+	       error: function (xhr, ajaxOptions, thrownError) { // в случае неудачного завершения запроса к серверу
+	            alert(xhr.status); // покажем ответ сервера
+	            alert(thrownError); // и текст ошибки
+	         },
+	       complete: function(data) { // событие после любого исхода
+
+	         }
+		});
+	}
+});
 
 
 

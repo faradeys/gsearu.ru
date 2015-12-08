@@ -16,12 +16,18 @@ if(isset($_POST['proj_group'])){
 		else {
 			$out = $modx->runSnippet('getResources', array('showHidden'=> '1','parents'=>'25','tpl'=>'invest_tpl', 'limit' => '6','includeTVs' => '1', 'processTVs' => '1',  'sortdirTV' => 'DESC', 'tvFilters' => 'project_cat ==%'.$proj_group.'%'));
 		}
-		
+
 	}
 	$json['acc'] = $out;
 	/*$array = explode('<div class="proj">', $out);
 	foreach($array as $key => $value){
 		$json[$key]  = '<div class="proj">'.$value;
 	}*/
+	echo json_encode($json);
+}
+if(isset($_POST['isloggining']))
+{
+	//$out = $modx->getAuthenticatedUser()->get('id');
+	$json['out'] = $out;
 	echo json_encode($json);
 }

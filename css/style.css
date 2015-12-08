@@ -659,8 +659,6 @@ header .buttons .search img{
   height: 45%;
 }
 .partic .item a {
-  width: 163px;
-  height: 44px;
   background-color: #ffc712;
   border-radius: 3px;
   display: block;
@@ -668,7 +666,9 @@ header .buttons .search img{
   color: white;
   font-size: 12px;
   font-weight: 700;
-  line-height: 48px;;
+  line-height: 48px;
+  height: 44px;
+  width: 163px;;
 }
 .partic .item:hover{
   border: 2px solid #ffc712;
@@ -804,7 +804,8 @@ header .buttons .search img{
   width: 1222px;
   margin: 0 auto;
   align-items: center;
-  overflow: hidden;;
+  overflow: hidden;
+  height: 125px;;
 
 }
 .partners .part_carousel .prev {
@@ -981,7 +982,6 @@ text-align: left;
   background-image: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.4) 100%);;
 }
 .top_slider .slider_footer .text {
-  height: 52px;
   line-height: 26px;
   text-align: left;
   display: inline-block;
@@ -1011,6 +1011,7 @@ text-align: left;
   font-size: 12px;
   font-weight: 700;
   line-height: 45px;
+  margin-top: 18px;;
 
 }
 .about {
@@ -3066,4 +3067,170 @@ margin-top: 5px;
   font-size: 13px;
   font-weight: 500;
   line-height: 20px;
+}
+.doinvest_content .title  {
+  color: #444;
+  font-family: Raleway;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 35px;
+  letter-spacing: -0.6px;
+  width: 70%;
+  margin: 0 auto;
+
+}
+.doinvest_content .form {
+  margin-top: 49px;
+  width: 70%;
+  margin: 49px auto 0;;
+
+}
+.doinvest_content .form .inp_block {
+  margin-bottom: 30px;
+
+}
+.doinvest_content .form .inp_block .text {
+  color: #444;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 15px;
+
+}
+
+.doinvest_content .form .inp_block input {
+  background-color: white;
+  border: 1px solid #cdcdcd;
+  border-radius: 4px;
+  width: 98%;
+  margin-top: 9px;
+  height: 44px;
+  padding-left: 15px;
+  color: #444;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 24px;;
+
+}
+.doinvest_content .form .inp_block input:focus{
+  border: 1px solid #ffc712;
+}
+.doinvest_content .form .inp_block .text_half {
+  margin-left: 34px;
+
+}
+.doinvest_content .form .inp_block .pod_block:first-child > .text_half {
+  margin-left: 0;
+}
+.doinvest_content .form .inp_block .inp_half {
+  width: 94%;
+  margin-left: 34px;
+
+}
+.doinvest_content .form .inp_block .pod_block:first-child > .inp_half {
+  margin-left: 0;
+}
+.doinvest_content .form .inp_block .pod_block {
+  width: 48%;
+  display: inline-block;
+  vertical-align: top;
+
+}
+.doinvest_content .form .price_block {
+  margin-top: 8px;
+  font-weight: 400;
+  line-height: 18px;
+  overflow: hidden;
+  
+}
+.doinvest_content .form .price_block .price_now {
+  display: inline-block;
+  color: #e35e02;
+  font-size: 18px;
+  font-family: Arial;
+}
+.doinvest_content .form .price_block .price_need {
+  display: inline-block;
+  color: #777;
+  font-size: 14px;
+  font-family: Arial;
+}
+.doinvest_content .form .price_block .percent {
+  float: right;
+  color: #e35e02;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  font-family: Arial;
+  text-align: right;
+}
+.doinvest_content .form .price_block .percent span {
+  display: block;
+  color: #777;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 18px;
+}
+.doinvest_content .form .price_block .line {
+  width: 100%;
+  height: 5px;
+  background-color: #d8dce2;
+  border-radius: 3px;
+  margin-top: 25px;
+
+}
+.doinvest_content .form .price_block .line_in {
+  position: absolute;
+  height: 5px;
+  background-color: #ffc712;
+  border-radius: 3px;
+  width: 20%;
+  margin-top: -5px;
+
+}
+.doinvest_content .form .price_block .oval {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-color: #e35e02;
+  border: 2px solid white;
+  border-radius: 15px;
+  margin-top: -11px;;
+
+}
+.doinvest_content .form .btn_block {
+  text-align: center;
+  margin-top: 36px;
+  margin-bottom: 88px;;
+
+}
+.doinvest_content .form .btn {
+  background-color: #ffc712;
+  border-radius: 3px;
+  color: white;
+  font-family: Raleway;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 18px;
+  padding: 12px 28px 12px;
+  margin: 0 auto;
+
+}
+.doinvest_content .form .btn:hover {
+  background-color: #e35e02;
+}
+.bxslider li{
+  height:125px;
+  text-align:center;
+ 
+}
+.bxslider li a{
+  height:125px;
+  display:flex;
+  vertical-align:middle;
+  align-items:center;
+  justify-content:center;
+}
+.prev a, .next a{
+  color:transparent;
+  cursor:pointer;
 }

@@ -1,0 +1,29 @@
+/*Стили чанка боссов на странице о нас*/
+.employee{
+	overflow:hidden;
+	margin-bottom:30px;
+}
+.employee img{
+	float:left;
+	display:inline-block;
+	margin-right:15px;
+	margin-bottom:60px;
+	width:100px;
+}
+.employee >div p{
+	 font-weight:bold;
+	 color:#e35e02;
+}
+.employee >div>span{
+	color: #666;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 26px;
+}
+.appointment{
+	display:block;
+	color: #666;
+    font-size: 15px;
+    font-weight: 500;
+	margin-top:5px;
+}
