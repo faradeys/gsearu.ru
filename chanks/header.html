@@ -1,28 +1,20 @@
 <header>
 	<a href="/" class="logo"><img src="assets/img/logo.svg"></a>
 	<div class="menu">
-		<!-- <ul>
-				<li><a  href="#">Главная</a></li>
-				<li><a href="#">О премии</a></li>
-				<li><a href="#">Люди</a></li>
-				<li><a href="#">Календарь</a></li>
-				<li class="have_subs"><a href="#">Медиа</a>
-					<div class="subs">
-						<ul>
-							<li><a href="#">О премии</a></li>
-							<li><a href="#">Люди</a></li>
-							<li><a href="#">Конфидециальность</a></li>
-						</ul>
-					</div>
-				</li>
-			</ul> -->
 			[[Wayfinder? &startId=`0` &rowClass=`` &innerTpl=`innerTpl_top_menu` &parentClass=`have_subs`]]
 	</div>
+	[[!+modx.user.id:isloggedin:is=`1`:then=`
+	<a href="profile.html?id=[[+modx.user.id]]" class="profile">
+		<div style="background-image:url([[+modx.user.id:userinfo=`photo`]]);" class="photo"></div>
+		<div class="oval"></div>
+		<div class="name">
+			[[!+modx.user.id:userinfo=`fullname`]]
+		</div>
+	</div>`:else=`
 	<div class="buttons">
-		<!-- <div class="search">
-			<img src="assets/img/search_top.png">
-			<input type="text" placeholder="ПОИСК ПО САЙТУ">
-		</div> -->
 		<a href="#" class="login">ВХОД / ПРИСОЕДЕНИТЬСЯ</a>
 	</div>
+	`]]
 </header>
+<input type="hidden" name="id_user" value="[[!+modx.user.id]]">
+[[$modal]]

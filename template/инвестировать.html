@@ -51,7 +51,9 @@
       <div style="margin-left:[[!invest_percent? &type=`percent3` &id=`[[!echo_get? &type=`id`]]`]]%;" class="oval"></div>
     </div>
     <div class="btn_block">
-      <a class="btn btn_invest" href="#">ИНВЕСТИРОВАТЬ</a>
+      <input type="hidden" name="id" value="[[!echo_get? &type=`id`]]">
+      <input type="hidden" name="do_invest" value="1">
+      <a class="btn btn_invest" data-login="" href="#">ИНВЕСТИРОВАТЬ</a>
     </div>
   </div>
 </div>
