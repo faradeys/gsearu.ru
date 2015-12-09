@@ -40,6 +40,21 @@ if(isset($_POST['isloggining'])) {
 	else {
 		$json['out'] = 'false';
 	}
+<<<<<<< HEAD
+	echo json_encode($json);
+}
+if (isset($_POST['do_invest'])) {
+	if (isset($_POST['name']) and isset($_POST['tel']) and isset($_POST['mail']) and isset($_POST['sum'])) {
+		$name = filtre_inp($_POST['name']);
+		$tel = filtre_inp($_POST['tel']);
+		$mail = filtre_inp($_POST['mail']);
+		$sum = filtre_inp($_POST['sum']);
+		$id_invest = filtre_inp($_POST['id']);
+		$id_user = filtre_inp($_POST['id_user']);
+		$json['out'] = mysql_query("INSERT INTO gsearu_invests (name,tel,mail,sum,id_invest,id_user) values ('$name','$tel','$mail','$sum','$id_invest','$id_user')");
+	}
+=======
+>>>>>>> 658c7fb229002a791352aacaa4dcf98ac3a528f8
 	echo json_encode($json);
 }
 if (isset($_POST['do_invest'])) {

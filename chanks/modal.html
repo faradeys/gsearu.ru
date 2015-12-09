@@ -1,27 +1,6 @@
 <div class="scrolled-overlay">
 	<div id="facebook-authentifikation">
-		<form name="facebook-authentifikation" method="post" action="#">
-			<div>
-				<h2>Вход</h2>
-				<img class="close-pop-up" src="assets/img/close.png"/>
-			</div>
-			<div>
-				<p>Присоединиться<br/>
-					к сообществу через<br/>
-					Facebook
-				</p>
-        [[!HybridAuth? &loginTpl=`tpl_auth` &providerTpl=`auth_provider`]]</a>
-			</div>
-			<div>
-				<input  type="text"  name="login-authentifikation-facebook" placeholder="Логин">
-			</div>
-			<div>
-				<input  type="text"  name="password-authentifikation-facebook" placeholder="Пароль">
-			</div>
-			<div>
-				<a href="#">Забыли пароль</a>
-				<input type="submit" value="Войти" name="go-to-facebook">
-			</div>
-		</form>
+		[[!Login]]
+		
 	</div>
 </div>
