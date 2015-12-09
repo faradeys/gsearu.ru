@@ -46,7 +46,7 @@
 				<a href="#">ПОМОЧЬ ПРОЕКТУ</a>
 			</div>
 		</div>`]]
-		<div class="helpers_block">
+		<!-- <div class="helpers_block">
 			<div class="helpers">
 				<a href="#"><img src="assets/img/helper1.png"></a>
 				<a href="#"><img src="assets/img/helper2.png"></a>
@@ -58,7 +58,7 @@
 				<div class="col">342</div>
 				<div class="text">Человека уже помогли проекту</div>
 			</div>
-		</div>
+		</div> -->
 	</div>
 	<div class="right_block">
 		<div class="stage_block">
@@ -67,18 +67,17 @@
 		</div>
 		<div class="innovator">
 			<div class="title_pr_a">ИННОВАТОР</div>
-			<a style="background-image:url(assets/img/profile_img.png)" href="#"></a>
-			<div class="name">Руслан Татунашвили</div>
+        [[!profile_info? &innovator=`1`]]
 		</div>
 		<div class="partners">
 			<div class="title_pr_a">ОРГАНИЗАЦИИ И ПАРТНЕРЫ</div>
 			[[tv_output? &type=`ОРГАНИЗАЦИЯ` &input=`[[*project_org]]`]]
 			[[tv_output? &type=`ПАРТНЕР` &input=`[[*project_partners]]`]]
 		</div>
-		<div class="place">
+		<!-- <div class="place">
 			<div class="title_pr_a">МЕСТОПОЛОЖЕНИЕ</div>
 			<div class="map"><img src="assets/img/proj_map.jpg"></div>
-		</div>
+		</div> -->
 		[[*project_tags:!empty=`
 		<div class="teg">
 			<div class="title_pr_a">ТЕГИ</div>
@@ -92,7 +91,7 @@
 	</div>
 
 </div>
-<div class="video_block">
+<!-- <div class="video_block">
 	<div class="content">
 		<div class="title_v">Медиа ресурсы проекта</div>
 		<a class="sl_next" href="#"><img src="assets/img/slider_next.png"></a>
@@ -126,7 +125,7 @@
 			</a>
 		</div>
 	</div>
-</div>
+</div> -->
 [[$delivery]]
 [[$footer]]
 </body>

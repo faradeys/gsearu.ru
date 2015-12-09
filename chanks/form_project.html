@@ -1,0 +1,202 @@
+<script type="text/javascript">
+$(document).ready(function() {
+$.dobPicker({
+      daySelector: '.dobday', /* Required */
+      monthSelector: '.dobmonth', /* Required */
+      yearSelector: '.dobyear', /* Required */
+      dayDefault: 'День', /* Optional */
+      monthDefault: 'Месяц', /* Optional */
+      yearDefault: 'Год', /* Optional */
+      minimumAge: 0, /* Optional */
+      maximumAge: 100 /* Optional */
+      });
+});
+</script>
+<div class="form-content">
+	<form id="pr_add" method="post" action="#" name="pr_add">
+		<h6>*Обязательно</h6>
+		<h2>Информация о компании, суть бизнеса</h2>
+		<div class="first-line-table1">
+			<div>
+				<p>НАЗВАНИЕ ВАШЕЙ КОМПАНИИ *<br/><br/></p>
+				<input required type="text" name="fio">
+			</div>
+			<div>
+				<p>САЙТ ОРГАНИЗАЦИИ *<br/><span>в формате www.вашсайт.ru</span></p>
+				<input required type="text" name="site">
+			</div>
+			<div>
+				<p>В КАКОЙ ОТРАСЛИ ВЫ ВЕДЁТЕ СВОЮ <br/>ДЕЯТЕЛЬНОСТЬ? *</p>
+				<div>
+					<select name="branch">
+						<option value=""></option>
+						<option>IT</option>
+						<option>Производство</option>
+						<option>Сельское хозяйство</option>
+						<option>ЖКХ</option>
+						<option>Медицина</option>
+					</select>
+				</div>
+			</div>
+		</div>
+		<div class="second-line-table1" >
+			<div>
+				<p>ГОДОВОЙ ОБОРОТ КОМПАНИИ ЗА 2014 В МЛН.РУБ. *<br/><span>цифрой, например 35, что равно 35 миллионам в год.<br/> Если меньшемиллиона, тогда 0,2</span></p>
+				<input required type="text" name="year-oborot-2014">
+			</div>
+			<div>
+				<p>ГОДОВОЙ ОБОРОТ КОМПАНИИ ЗА 1-Е ПОЛУГОДИЕ 2015 ГОДА <br/>В МЛН.РУБ. *<br/><span>цифрой, например 35, что равно 35 миллионам в год.<br/>Если меньше миллиона, тогда 0,2</span></p>
+				<input required type="text" name="year-oborot-2015">
+			</div>
+			<div>
+				<p>СКОЛЬКО СОТРУДНИКОВ РАБОТАЕТ В КОМПАНИИ? *<br/><span>фактически работают<span></p>
+				<input required type="text" name="kol-vo-sotrudnikov">
+			</div>
+		</div>
+		<div class="therd-line-table1">
+			<div>
+				<p>ОПИШИТЕ ВАШ БИЗНЕС В НЕСКОЛЬКИХ ПРЕДЛОЖЕНИЯХ *<br/><span>сама суть проекта до 500 символов</span></p>
+				<textarea required name="about_business" ></textarea>
+			</div>
+			<div>
+				<div>
+					<p>ДАТА ОСНОВАНИЯ БИЗНЕСА *<br/><span>дата выдачи свидетельства о регистрации</span></p>
+					<div class="calendar-mark1">
+						<select name="business_osn_day" class="dobday form-control input-lg"></select>
+						<select name="business_osn_month" class="dobmonth form-control input-lg"></select>
+						<select name="business_osn_year" class="dobyear form-control input-lg"></select>
+					</div>
+				</div>
+				<div>
+					<p>СТРАНА *<br/><span>где зарегистрирована компания?</span></p>
+					<input required type="text" name="country_company">
+				</div>
+			</div>
+			<div class="checkbox1">
+				<p>ГЕОГРАФИЯ ВАШЕГО БИЗНЕСА *</p>
+				<input type="radio" name="location-bizness" value="Москва и/или Санкт-Петербург" id="location1"> <label for="location1">Москва и/или Санкт-Петербург</label><Br>
+				<input type="radio" name="location-bizness" value="По всей России" id="location2"> <label for="location2">По всей России</label><Br>
+				<input type="radio" name="location-bizness" value="Россия и СНГ" id="location3"> <label for="location3">Россия и СНГ</label><Br>
+				<input type="radio" name="location-bizness" value="Россия и Дальнее зарубежье" id="location4"> <label for="location4">Россия и Дальнее зарубежье</label><Br>
+				<input type="radio" name="location-bizness" value="Домашний регион" id="location5"> <label for="location5">Домашний регион</label><Br>
+			</div>
+		</div>
+		<h2>Как с вами связаться?</h2>
+		<div class="four-line-table1">
+			<div>
+				<p>НОМЕР МОБИЛЬНОГО *<br/><span>в формате +79262223344</span></p>
+				<input required type="text" name="phone">
+			</div>
+			<div>
+				<p>EMAIL *</p>
+				<input required type="text" name="email">
+			</div>
+			<div>
+				<p>ССЫЛКА НА ВАШ ПРОФИЛЬ В СОЦ.СЕТЯХ *<br/><span>VK, FB, и проч<span></p>
+				<input required type="text" name="url_soc">
+			</div>
+		</div>
+		<div class="five-line-table1">
+			<div>
+				<p>ГОРОД *</p>
+				<input required type="text" name="sity">
+			</div>
+			<div>
+				<p>УЛИЦА *</p>
+				<input required type="text" name="strit">
+			</div>
+			<div>
+				<p>№ ДОМА *<br/><span>укажите также корпус, строение, если есть</span></p>
+				<input required type="text" name="home">
+			</div>
+		</div>
+		<h2>О вас</h2>
+		<div class="six-line-table1">
+			<div>
+				<div>
+					<div>
+						<p>ФИО *<br/><span>полностью</span></p>
+						<input required type="text" name="fio-user">
+					</div>
+					<div>
+						<p>ДАТА РОЖДЕНИЯ *</p>
+						<div class="calendar-mark1">
+							<select name="birthday_day" class="dobday form-control input-lg"></select>
+							<select name="birthday_month" class="dobmonth form-control input-lg"></select>
+							<select name="birthday_yaer" class="dobyear form-control input-lg"></select>
+							<img src="assets/img/form/calendar.png"/>
+						</div>
+					</div>
+				</div>
+				<div>
+					<div>
+						<p>НАЗВАНИЕ УЧЕБНОГО ЗАВЕДЕНИЯ (аббревиатурой,<br/> например: МГУ)<br/> <span>*Где вы учитесь? Если закончили, то где учились?</span></p>
+						<input required type="text" name="school">
+					</div>
+					<div>
+						<p>СПЕЦИАЛИЗАЦИЯ *<br/><span>(направление подготовки)</span></p>
+						<input required type="text" name="special">
+					</div>
+				</div>
+				<div>
+					<div>
+						<p>ДАТА ПОСТУПЛЕНИЯ *</p>
+						<div class="calendar-mark1">
+							<select name="vuz_in_day" class="dobday form-control input-lg"></select>
+							<select name="vuz_in_month" class="dobmonth form-control input-lg"></select>
+							<select name="vuz_in_year" class="dobyear form-control input-lg"></select>
+							<img src="assets/img/form/calendar.png"/>
+						</div>
+					</div>
+					<div>
+						<p>ДАТА ОКОНЧАНИЯ *</p>
+						<div class="calendar-mark1">
+							<select name="vuz_out_day" class="dobday form-control input-lg"></select>
+							<select name="vuz_out_month" class="dobmonth form-control input-lg"></select>
+							<select name="vuz_out_year" class="dobyear form-control input-lg"></select>
+							<img src="assets/img/form/calendar.png"/>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div>
+				<div class="checkbox1">
+					<p>ЗНАНИЕ АНГЛИЙСКОГО ЯЗЫКА *<br/><span>укажите уровень</span></p>
+					<input type="radio" name="skill" value="Не владею" id="skill1"> <label for="skill1">Не владею</label><Br>
+					<input type="radio" name="skill" value="Базовый" id="skill2"> <label for="skill2">Базовый</label><Br>
+					<input type="radio" name="skill" value="Средний" id="skill3"> <label for="skill3">Средний</label><Br>
+					<input type="radio" name="skill" value="Выше среднего" id="skill4"> <label for="skill4">Выше среднего</label><Br>
+					<input type="radio" name="skill" value="Свободное владение" id="skill5"> <label for="skill5">Свободное владение</label><Br>
+				</div>
+				<div class="checkbox1">
+					<p>ОТКУДА ВЫ УЗНАЛИ О ПРЕМИИ GSEA? *</p>
+					<input type="radio" name="where_learned" value="Рассылка GSEA" id="where_learned1"> <label for="where_learned1">Рассылка GSEA</label><Br>
+					<input type="radio" name="where_learned" value="Рассылка партнеров премии GSEA" id="where_learned2"> <label for="where_learned2">Рассылка партнеров премии GSEA</label><Br>
+					<input type="radio" name="where_learned" value="Соцсети" id="where_learned3"> <label for="where_learned3">Соцсети</label><Br>
+					<input type="radio" name="where_learned" value="СМИ" id="where_learned4"> <label for="where_learned4">СМИ</label><Br>
+					<input type="radio" name="where_learned" value="Другое" id="where_learned5"> <label for="where_learned5">Другое</label><Br>
+				</div>
+			</div>
+		</div>
+		<h2>Достижения</h2>
+		<div class="seven-line-table1">
+			<div>
+				<div class="checkbox1">
+					<p>ПОЛУЧАЛИ ЛИ ВЫ ИНВЕСТИЦИИ? *</p>
+					<input type="radio" name="select_inv" value="Да, привлекали" id="select1"> <label for="select1">Да, привлекали</label><Br>
+					<input type="radio" name="select_inv" value="Нет, развивались из оборотных средств" id="select2"> <label for="select2">Нет, развивались из оборотных средств</label>
+				</div>
+			</div>
+			<div>
+				<p>РАЗМЕР ИНВЕСТИЦИЙ</p>
+				<input required type="text" name="investment_size">
+			</div>
+			<div>
+				<p>ОТ КОГО ВЫ ПОЛУЧАЛИ ИНВЕСТИЦИИ?</p>
+				<input required type="text" name="investment_who">
+			</div>
+		</div>
+    <input type="hidden" name="req_project" value="[[+type]]">
+		<input type="submit" value="[[+text_inp]]" name="push">
+	</form>
+</div>

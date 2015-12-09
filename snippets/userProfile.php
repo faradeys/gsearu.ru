@@ -16,6 +16,5 @@ $data['profile'] = $profile->toArray();
 foreach ($extended as $key =>  $value) {
   $data['extended'][$key] = $value;
 }
-
 // выводим результат
 echo $data[$class][$type];

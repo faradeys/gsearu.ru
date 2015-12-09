@@ -27,5 +27,16 @@ $(document).ready(function() {
       			nextSelector:'.next',
       			prevSelector:'.prev',
         });
+        $(".watch_btn").on('click', function(e){
+        	e.preventDefault();
+        	$("#top-video-container").removeClass( "top-video-off" );
+        	$("#top-video-container").addClass( "top-video-on" );
+        	$("#top-video-container").append('<iframe width="100%" allowfullscreen="" enablejsapi="1" height="100%" src="https://www.youtube.com/embed/z7rNk3wKDK8?autohide=1&iv_load_policy=3&modestbranding=1&showinfo=0&enablejsapi=1&autoplay=1&playerapiid=ytplayer" frameborder="0" allowfullscreen></iframe>');
+        	setTimeout(function(){
+        	$("#top-video-container").removeClass( "top-video-on" );
+        	$("#top-video-container").addClass( "top-video-off" );
+        	$("#top-video-container>iframe").remove();
 
+        	}, 100000)
+        });
 });

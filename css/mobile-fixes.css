@@ -1,0 +1,27 @@
+.partners .part_carousel {
+    width: 100%;
+}
+body {
+    width: 1170px;
+}
+.top_slider {
+    overflow: hidden;
+}
+.about .item {
+    width: 251px;
+}
+.partic .item:last-child {
+    margin-right: 0;
+}
+.partic .item {
+    margin-right: 23px;
+}
+.block_for_slider,
+.block_for_slider2,
+.block_for_slider3,
+.block_for_slider4 {
+    display: none;
+}
+.about .item .text ul li {
+    margin-bottom: 1px;
+}
