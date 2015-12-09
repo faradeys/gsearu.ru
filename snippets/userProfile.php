@@ -13,8 +13,8 @@ $extended = $profile->get('extended');
 $data = array();
 $data['user'] = $user->toArray();
 $data['profile'] = $profile->toArray();
-foreach ($extended as $value) {
-  $data['extended'][] = $value;
+foreach ($extended as $key =>  $value) {
+  $data['extended'][$key] = $value;
 }
 
 // выводим результат
