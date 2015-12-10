@@ -4,10 +4,10 @@ $user_all = $modx->getAuthenticatedUser();
 if (isset($user_all)){
   $user_id = $user_all -> get('id');
   $internalKey = $user_all->getOne('Profile')->get('internalKey');
-  $sites = $modx->runSnippet('userProfile', array('class'=>'profile','type'=>'website'));
-  $interests = $modx->runSnippet('userProfile', array('class'=>'extended','type'=>'interests'));
-  $projects = $modx->runSnippet('userProfile', array('class'=>'extended','type'=>'id_doc'));
 }
+$sites = $modx->runSnippet('userProfile', array('class'=>'profile','type'=>'website'));
+$interests = $modx->runSnippet('userProfile', array('class'=>'extended','type'=>'interests'));
+$projects = $modx->runSnippet('userProfile', array('class'=>'extended','type'=>'id_doc'));
 $alias_page = $modx->resource->get('alias');
 $r1 =  mysql_fetch_array(mysql_query("SELECT id FROM gsearu_ha_user_services WHERE internalKey = $internalKey "));
 if ($get_id == $user_id) {

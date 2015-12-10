@@ -1,4 +1,5 @@
 <div style="background-image: url([[*header_second_bg]]);" class="header_second">
+	<div id="top-video-container" class="top-video-off"></div>
 	<div class="mask"></div>
 	<div class="bot_shadow"></div>
 	<div class="title">[[*pagetitle]]</div>
@@ -7,105 +8,56 @@
 	</div>
 	<div class="socials">
 		<div class="item">
-			<!-- Put this script tag to the <head> of your page -->
-			<script type="text/javascript" src="//vk.com/js/api/openapi.js?121"></script>
-
-			<script type="text/javascript">
-			  VK.init({apiId: 5181512, onlyWidgets: true});
-			</script>
-			<!-- Put this div tag to the place, where the Like block will be -->
-			<div id="vk_like"></div>
-			<script type="text/javascript">
-			VK.Widgets.Like("vk_like", {type: "vertical", height: 24});
-			</script>
+			<div class="social-likes">
+				<div class="facebook" title="Поделиться ссылкой на Фейсбуке">Facebook</div>
+				<div class="vkontakte" title="Поделиться ссылкой во Вконтакте">Вконтакте</div>
+			</div>
 		</div>
 		<div class="item">
-			<div id="fb-root"></div>
-			<script>(function(d, s, id) {
-			  var js, fjs = d.getElementsByTagName(s)[0];
-			  if (d.getElementById(id)) return;
-			  js = d.createElement(s); js.id = id;
-			  js.src = "//connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v2.5&appId=192533221087127";
-			  fjs.parentNode.insertBefore(js, fjs);
-			}(document, 'script', 'facebook-jssdk'));</script>
-			<div class="fb-share-button" data-href="[[~id]]" data-layout="box_count"></div>
+			<div class="vote_bnt">голосовать</div>
 		</div>
 		<!-- <div class="item">
-			<img src="assets/img/proj_yb.png">
-			<div class="col">25</div>
-		</div>
-		<div class="item">
 			<img src="assets/img/proj_tw.png">
 			<div class="col">11</div>
 		</div> -->
 	</div>
-	<a class="watch" href="#">
+	<a class="watch2 [[*video_project:!empty=`watch`]]" href="#">
 		<img src="assets/img/watch_video.png">
 		СМОТРЕТЬ ВИДЕО
 	</a>
+
 	<div class="content">
 		<div class="raiting_block">
 			<div class="oval">
 				<div class="text">Голосование online</div>
 				<div class="num">[[*project_rating]]</div>
 			</div>
-			<canvas id="canvas" data-rating="[[*project_rating]]" class="canvas_rt2" width="180" height="180">Your browser does not support the HTML5 canvas tag.</canvas>
-			<div class="plus">+</div>
+			<canvas id="canvas" data-rating="[[*project_rating_percent]]" class="canvas_rt2" width="180" height="180">Your browser does not support the HTML5 canvas tag.</canvas>
+			<a href="#" class="plus">+</a>
 			<div class="votes"></div>
+			<input type="hidden" name="page_id" value="[[*id]]">
 		</div>
 	</div>
 </div>
 <div class="block_for_slider"></div><div class="block_for_slider2"></div>
 <script type="text/javascript">
 window.onload = function() {
-      var canvas = document.getElementById('canvas');
-      var context = canvas.getContext('2d');
-      var rating = canvas.getAttribute("data-rating");
-      var rating_cof = 360*rating / 100 - 90;
-      canvas.style.width=180;
-      canvas.style.height=180;
-      canvas.width=180;
-      canvas.height=180;
-      var x = canvas.width / 2;
-      var y = canvas.height / 2;
-      var rat_x = 59.5*Math.cos(getRadians(rating_cof)) + x;
-      var rat_y = 59.5*Math.sin(getRadians(rating_cof)) + y;
-      var plus = document.querySelector('.plus');
-      console.log(rat_x - x,rat_y - y, rating_cof);
-      plus.style.left = (rat_x - 12) + 'px';
-      plus.style.top = (rat_y -41) + 'px';
 
-      var counterClockwise = false;
-      var run_black = function() {
-        var radius = 59.5;
-        var time = (new Date().getTime()- startTime)/ duration;
-        var startAngle = getRadians(-90);
-        var endAngle = getRadians(rating_cof);
-        /*var x_n = endAngle.width;
-      	var y_n = endAngle.height;
-      	console.log(x_n,y_n);*/
-        context.lineWidth = 4;
-        context.strokeStyle = "rgb(255,199,18)";
-        if(time < 1) {requestAnimationFrame(run_black);
-          	endAngle = startAngle +(endAngle - startAngle)* time;
-        }
-        else {
-        	document.querySelector('.plus').style.visibility='visible';
-          	duration = 1000,
-          	startTime = new Date().getTime();
-        };
-        context.clearRect(0, 0, 600, 300);
-        context.beginPath();
-		context.arc(x, y, radius, startAngle, endAngle, counterClockwise);
-        context.stroke();
+get_convas_pr();
 
-      };
-      var duration = 1500,
-      startTime = new Date().getTime();
-      run_black();
-	function getRadians(degrees) {
-        return degrees * (Math.PI / 180);
-    }
+$(".watch").click(function(e){
+			e.preventDefault();
+			$("#top-video-container").removeClass( "top-video-off" );
+			$("#top-video-container").addClass( "top-video-on-progect" );
+			$("#top-video-container").append('<img id="closeVideo" src="assets/img/closeVideo.png"/><iframe width="100%" allowfullscreen="" enablejsapi="1" height="100%" src="[[*video_project]]?autohide=1&iv_load_policy=3&modestbranding=1&showinfo=0&enablejsapi=1&autoplay=1&playerapiid=ytplayer" frameborder="0" allowfullscreen></iframe>');
+
+			$("#closeVideo").on('click', function(){
+				$("#top-video-container").removeClass( "top-video-on-progect" );
+				$("#top-video-container").addClass( "top-video-off" );
+				$("#top-video-container>iframe").remove();
+			});
+});
+
 
 }
 </script>

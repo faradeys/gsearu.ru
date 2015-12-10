@@ -1,4 +1,5 @@
 <?php
+//функция обработки входящих данных, для использования их в базе
 function filtre_inp($inp){
 	$inp = trim($inp);
 	$inp = strip_tags($inp);
@@ -6,6 +7,7 @@ function filtre_inp($inp){
 	$inp = mysql_escape_string($inp);
 	return $inp;
 }
+//функция отправки email
 function send_mail($email,$subject,$message,$mail_from){
 	$headers = "MIME-Version: 1.0"  . "\r\n";
 	$headers .= "Content-type: text/plain; charset=utf-8"  . "\r\n";
@@ -84,7 +86,7 @@ if(isset($_POST['isloggin'])) {
 	}
 	echo json_encode($json);
 }
-
+//Обработчик формы заявки на участие в премии ГСЕА
 if (isset($_POST['req_project'])) {
 	$type = filtre_inp($_POST['req_project']);
 	$fio = filtre_inp($_POST['fio']);
@@ -158,7 +160,7 @@ if (isset($_POST['req_project'])) {
 	$json['out_mail'] = send_mail('yeliseeva@indigo-trg.com','Анкета на участие в премии Пользователя: '.$fio_user,$message,'elmv@pr-solution.ru');
 	echo json_encode($json);
 }
-
+//Обработчик формы заявки на новый проект
 if (isset($_POST['req_form_tye'])) {
 	$type = filtre_inp($_POST['req_form_tye']);
 	$name_progect = filtre_inp($_POST['name-progect']);
@@ -193,4 +195,84 @@ if (isset($_POST['req_form_tye'])) {
 	$json['out_mail'] = send_mail('yeliseeva@indigo-trg.com','Новый проект: '.$name_progect,$message,'elmv@pr-solution.ru');
 	echo json_encode($json);
 
+}
+//Проверка, голосовал ли пользователь за проект
+if (isset($_POST['isvote'])) {
+	$page_id = filtre_inp($_POST['isvote']);
+	$user_all = $modx->getAuthenticatedUser();
+	if (isset($user_all)){
+	  $user_id = $user_all -> get('id');
+	  $Profile = $user_all->getOne('Profile');
+	}
+	$r1 =  mysql_fetch_array(mysql_query("SELECT id FROM gsearu_users_vote WHERE id_user = $user_id AND id_doc = $page_id "));
+	if(empty($r1['id'])){
+		$json['out'] = 'true';
+	}
+	else{
+		$json['out'] = 'false';
+	}
+	echo json_encode($json);
+}
+//Добавление голоса пользователя
+if (isset($_POST['addvote'])) {
+	$page_id = filtre_inp($_POST['addvote']);
+	$percent = filtre_inp($_POST['percent']);
+	$num = filtre_inp($_POST['num']);
+	$user_all = $modx->getAuthenticatedUser();
+	if (isset($user_all)){
+	  $user_id = $user_all -> get('id');
+	  $Profile = $user_all -> getOne('Profile');
+	}
+	$json['out_ins'] = mysql_query("INSERT INTO gsearu_users_vote (id_user,id_doc) values ('$user_id','$page_id')");
+	$page = $modx->getObject('modResource',$page_id);
+	$page->setTVValue('project_rating', $num+11);
+	$page->setTVValue('project_rating_percent', $percent+11);
+	$json['out'] = $page->save();
+	echo json_encode($json);
+}
+
+
+//Помощь проекту
+if (isset($_POST['help_project'])) {
+	$page_id = filtre_inp($_POST['help_project']);
+	$type = filtre_inp($_POST['type']);
+	$name = filtre_inp($_POST['name']);
+	$mail = filtre_inp($_POST['mail']);
+	$tel = filtre_inp($_POST['tel']);
+	$text = filtre_inp($_POST['text']);
+	$page = $modx->getObject('modResource',$page_id);
+	$title_pr = $page->get('pagetitle');
+	if($type == 'Предложить новость'){
+		$type_name = '';
+		$type_text = 'Предложенная новость от - ';
+	}
+	if($type == 'Помочь проекту'){
+		$type_name = 'Название проекта: ".$title_pr."\n';
+		$type_text = 'Помощь проекту от - ';
+	}
+	if($type == 'Стать судьей'){
+		$type_name = '';
+		$type_text = 'Заявка на судейство от - ';
+	}
+	$message ="
+		".$type_name."
+		Имя: ".$name."\n
+		Почта: ".$mail."\n
+		Телефон: ".$tel."\n
+		Сообщение: ".$text."\n
+	";
+	$json['out_mail'] = send_mail('elmv@pr-solution.ru',$type_text.$name,$message,'elmv@pr-solution.ru');
+	echo json_encode($json);
+}
+if (isset($_POST['meet_add'])) {
+	$name = filtre_inp($_POST['name']);
+	$data = filtre_inp($_POST['data']);
+	$text = filtre_inp($_POST['text']);
+	$message ="
+		Название события: ".$name."\n
+		Дата события: ".$data."\n
+		Текст: ".$text."\n
+	";
+	$json['out_mail'] = send_mail('elmv@pr-solution.ru','Новое событие:'.$name,$message,'elmv@pr-solution.ru');
+	echo json_encode($json);
 }

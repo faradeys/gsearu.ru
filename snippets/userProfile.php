@@ -2,7 +2,13 @@
 // получаем шаблон
 //$tpl = $modx->getOption('tpl',$scriptProperties,'userProfileTpl');
 // получаем значение переменной "user" из _GET
-$userId = intval($_GET["id"]);
+if (isset($user_id)) {
+  $userId = $user_id;
+}
+else {
+  $userId = intval($_GET["id"]);
+}
+
 if($userId == 0){return;}
 // формируем запрос для загрузки информации из БД
 $user = $modx->getObject('modUser',array('active' => true, 'id' => $userId ));

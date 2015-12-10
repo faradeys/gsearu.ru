@@ -49,7 +49,7 @@ input {
 header {
   width: 100%;
   height: 110px;
-  overflow: hidden;
+  position: relative;
 }
 header .logo {
   float: left;
@@ -81,7 +81,7 @@ header .menu ul {
 
 header .menu .have_subs .subs {
   position: absolute;
-  z-index: 4;
+  z-index: 5;
   padding-left: 17.5px;
   display: none;
 }
@@ -100,6 +100,7 @@ header .menu .have_subs ul {
 
 }
 header .menu .have_subs ul li{
+  position: relative;;;
 
 }
 
@@ -207,6 +208,7 @@ header .profile:hover > .name {
 .top_slider {
   height: 690px;
   width: 100%;
+  position: relative;
 }
 .top_slider .slider1{
   width: 100%;
@@ -289,6 +291,8 @@ header .profile:hover > .name {
   text-align: right;
   margin: 0px auto 0;
   width: 1064px;
+  position: relative;
+  z-index: 3;
 
 }
 .top_slider .oval .oval_s{
@@ -1006,7 +1010,7 @@ text-align: left;
   width: 100%;
   height: 105px;
   background-color: rgba(0,0,0,0.5);
-  margin-top: 21px;
+  margin-top: 6px;
   text-align: center;
   display: flex;
   align-items: center;
@@ -1016,9 +1020,10 @@ text-align: left;
 .top_slider .bot_shadow {
   height: 277px;
   width: 100%;
-  margin-top: -150px;
+  margin-top: -166px;
   position: absolute;
-  background-image: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.4) 100%);;
+  background-image: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
+  z-index: 2;;;
 }
 .top_slider .slider_footer .text {
   line-height: 26px;
@@ -1131,7 +1136,7 @@ text-align: left;
 }
 .header_second .content .text {
   color: white;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 600;
   line-height: 18px;
   margin-top: 20px;
@@ -1780,12 +1785,27 @@ text-align: left;
 }
 .project .header_second .socials .item {
   vertical-align: top;
-  margin-left: 36px;
   height: 66px;
   display: inline-flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
+  margin-left: 35px;
+
+}
+.project .header_second .socials .item .vote_bnt{
+  background-color: #EB781C;
+  color: white;
+  padding: 12px 22px 12px 42px;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 3px;
+  background-image: url('../img/vote_btn.png');
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-position-x: 11px;
+  cursor: pointer;
 
 }
 .project .header_second .socials .item .fb-share-button{
@@ -1824,6 +1844,23 @@ text-align: left;
   border-width: 4px;
   margin-left: -4px;
 }
+.project .header_second .watch2 {
+  width: 213px;
+  height: 44px;
+  background-color: #ffc712;
+  border-radius: 3px;
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 44px;
+  display: block;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  margin: 37px auto 0;
+      cursor: default;
+    pointer-events: none;
+}
 .project .header_second .watch {
   width: 213px;
   height: 44px;
@@ -1838,14 +1875,26 @@ text-align: left;
   position: relative;
   z-index: 2;
   margin: 37px auto 0;
+  cursor: pointer;
+  pointer-events: all;;;;
+}
+
+.project .header_second .watch2:hover {
+  background-color: #e35e02;
 }
 .project .header_second .watch:hover {
   background-color: #e35e02;
+}
+
+.project .header_second .watch2 img {
+    vertical-align: text-bottom;
+    margin-right: 16px;
 }
 .project .header_second .watch img {
     vertical-align: text-bottom;
     margin-right: 16px;
 }
+
 .project .header_second .raiting_block {
   position: absolute;
   right: 0;
@@ -1872,7 +1921,7 @@ text-align: left;
 .project .header_second .raiting_block .oval .num {
   color: white;
   font-family: Arial;
-  font-size: 32px;
+  font-size: 29px;
   font-weight: 700;
   line-height: 42px;
 
@@ -1897,7 +1946,7 @@ text-align: left;
   visibility: hidden;
 }
 .project .header_second .raiting_block .text {
-  margin-top: 30px;
+  margin-top: 20px;
 
 }
 .project .header_second .raiting_block .votes {
@@ -2294,11 +2343,13 @@ margin-top: 5px;
   position: absolute;
   margin: 358px 0 0 0;
   right: 20px;
+  z-index: 3;
 }
 .sl_pre {
   position: absolute;
   margin-top: 358px;
   left: 20px;
+  z-index: 3;
 }
 .sl_pre img {
   opacity: 0.5;
@@ -3624,6 +3675,8 @@ border: 1px solid #c2c2c2;
 border-radius: 6px;
 padding-left:10px;
 padding-right:10px;
+resize:none;
+outline:none;
 }
 .therd-line-table1 select{
 width: 115px;
@@ -3944,10 +3997,99 @@ padding-left: 10px;
 }
 .modal_all {
   display: flex;
+  justify-content: space-between;
 }
 .modal_all .close-pop-up {
-  float: none;
   margin: 10px;
   width: 19px;
   height: 19px;
+  float: none;
+}
+.modal_block {
+  display: none;
+  background-color: white;
+  border: 1px solid #c2c2c2;
+  border-radius: 6px;
+  padding: 32px;
+}
+.modal_block .title {
+  display: inline-block;
+  color: #505050;
+  font-size: 24px;
+  font-weight: 600;
+
+}
+.modal_block .close {
+  float: right;
+  cursor: pointer;
+
+}
+.modal_block .help_pr {
+  overflow: hidden;
+  margin-top: 40px;
+
+}
+.modal_block .help_pr .inp_block {
+  display: inline-block;
+
+}
+.modal_block .help_pr .text {
+  color: #1d1d1d;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+
+}
+
+.modal_block .help_pr .inp_block .text {
+  margin-left: 32px;
+}
+.modal_block .help_pr .inp_block:first-child > .text {
+  margin-left: 0px;
+
+}
+.modal_block .help_pr .inp_block input {
+  width: 359px;
+  background-color: white;
+  border: 1px solid #c2c2c2;
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  margin-left: 32px;
+  line-height: 25px;
+
+}
+.modal_block .help_pr .inp_block:first-child > input {
+  margin-left: 0;
+
+}
+.modal_block .help_pr .textarea_block {
+  margin-top: 33px;
+
+}
+.modal_block .help_pr .textarea_block textarea {
+  width: 98.1%; font-weight: 700; background-color: white; border: 1px solid #c2c2c2; border-radius: 6px; outline: none; resize: none; padding: 10px; height: 147px;
+
+}
+.modal_block .help_pr .textarea_block .text {
+
+}
+.modal_block .help_pr .btn_block {
+  margin-top: 29px;
+  text-align: center;
+  height: 47px;;;
+
+}
+.modal_block .help_pr .btn_block a {
+  background-color: #ffc712;
+  border-radius: 6px;
+  color: white;
+  font-family: Raleway;
+  font-size: 24px;
+  font-weight: 400;
+  text-transform: uppercase;
+  padding: 10px 113px;
+
 }
